@@ -1,0 +1,165 @@
+/*
+ * FiveStar's site, by the brand rules in the app repo (docs/brand/README.md):
+ *   - no gradients, anywhere: every fill and background is one flat color
+ *   - Playfair Display for the wordmark and headings, Inter for everything else (self-hosted, no font CDN)
+ *   - Sunset Coral fills carry Midnight text, never white; coral TEXT uses the ink value
+ *   - the mark on a dark ground is mark-on-dark.svg
+ */
+@import '@fontsource-variable/inter/index.css';
+@import '@fontsource-variable/playfair-display/index.css';
+
+:root {
+  --coral: #ff5a4f;
+  --coral-ink: #c4433a;
+  --indigo: #3b5bff;
+  --indigo-ink: #3b5bff;
+  --golden: #ffc247;
+  --midnight: #0f172a;
+  --slate: #475569;
+  --cloud: #e2e8f0;
+  --sand: #f8fafc;
+  --cream: #fff8ef;
+
+  --paper: var(--sand);
+  --card: #ffffff;
+  --ink: var(--midnight);
+  --muted: var(--slate);
+  --line: var(--cloud);
+
+  --font-display: 'Playfair Display Variable', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --ifm-font-family-base: var(--font-sans);
+  --ifm-heading-font-family: var(--font-display);
+  --ifm-heading-font-weight: 700;
+  --ifm-font-color-base: var(--ink);
+  --ifm-heading-color: var(--ink);
+  --ifm-background-color: var(--paper);
+  --ifm-background-surface-color: var(--card);
+  --ifm-color-emphasis-300: var(--line);
+  --ifm-hr-background-color: var(--line);
+  --ifm-toc-border-color: var(--line);
+
+  --ifm-color-primary: #3b5bff;
+  --ifm-color-primary-dark: #2e46e6;
+  --ifm-color-primary-darker: #2a40d4;
+  --ifm-color-primary-darkest: #2335ad;
+  --ifm-color-primary-light: #5571ff;
+  --ifm-color-primary-lighter: #6680ff;
+  --ifm-color-primary-lightest: #8a9dff;
+  --ifm-link-color: var(--indigo-ink);
+
+  --ifm-navbar-height: 64px;
+  --ifm-navbar-background-color: var(--paper);
+  --ifm-navbar-shadow: none;
+  --ifm-footer-background-color: var(--midnight);
+  --ifm-container-width-xl: 1120px;
+  --ifm-global-radius: 12px;
+  --ifm-code-font-size: 92%;
+}
+
+[data-theme='dark'] {
+  --coral-ink: #ff6b61;
+  --indigo-ink: #a5b4fc;
+  --paper: var(--midnight);
+  --card: #1e293b;
+  --ink: #f8fafc;
+  --muted: #94a3b8;
+  --line: #334155;
+  --cream: #1e293b;
+
+  --ifm-color-primary: #a5b4fc;
+  --ifm-color-primary-dark: #8b9cfb;
+  --ifm-color-primary-darker: #7e90fa;
+  --ifm-color-primary-darkest: #5b70f8;
+  --ifm-color-primary-light: #bfcafd;
+  --ifm-color-primary-lighter: #ccd5fd;
+  --ifm-color-primary-lightest: #eef1ff;
+  --ifm-footer-background-color: #0b1120;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--paper); color: var(--ink); overflow-x: hidden; }
+
+h1, h2, h3, .hero-title, .wordmark { font-family: var(--font-display); letter-spacing: -0.01em; }
+h4, h5, h6 { font-family: var(--font-sans); }
+
+/* ---- iPhone safe areas: keep content clear of the notch and the home indicator ---- */
+.navbar {
+  padding-left: max(var(--ifm-navbar-padding-horizontal), env(safe-area-inset-left));
+  padding-right: max(var(--ifm-navbar-padding-horizontal), env(safe-area-inset-right));
+  border-bottom: 1px solid var(--line);
+}
+.footer {
+  padding-left: max(var(--ifm-footer-padding-horizontal), env(safe-area-inset-left));
+  padding-right: max(var(--ifm-footer-padding-horizontal), env(safe-area-inset-right));
+  padding-bottom: calc(var(--ifm-footer-padding-vertical) + env(safe-area-inset-bottom));
+}
+main .container {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+/* ---- navbar ---- */
+.navbar__inner { max-width: 1120px; margin: 0 auto; }
+.navbar__brand { gap: 0.25rem; }
+.navbar__title { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--ink); }
+.navbar__link { font-weight: 500; color: var(--muted); }
+.navbar__link:hover, .navbar__link--active { color: var(--ink); }
+
+/* The one coral action: a flat coral fill carrying Midnight text. */
+.navbar-cta,
+.button--coral {
+  background: var(--coral);
+  color: var(--midnight) !important;
+  border: 0;
+  border-radius: 999px;
+  font-weight: 600;
+}
+.navbar-cta { padding: 0.4rem 1rem; margin-left: 0.5rem; white-space: nowrap; }
+.navbar-cta:hover, .button--coral:hover { background: #ff7a70; color: var(--midnight) !important; text-decoration: none; }
+.navbar-cta svg { display: none; } /* no "external link" arrow on the button */
+
+/* On a phone the theme moves every navbar item into the sidebar; keep "Open FiveStar" in view. */
+@media (max-width: 996px) {
+  .navbar__items--right > .navbar-cta { display: inline-flex; align-items: center; font-size: 0.9rem; padding: 0.35rem 0.8rem; }
+}
+@media (max-width: 360px) {
+  .navbar__title { display: none; }
+}
+
+/* ---- footer: Midnight ground, so the mark is mark-on-dark ---- */
+.footer--dark { background-color: #0f172a; border-top: 1px solid var(--line); }
+[data-theme='dark'] .footer--dark { background-color: #0b1120; }
+.footer__title { font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: #94a3b8; }
+.footer__link-item { color: #e2e8f0; }
+.footer__link-item:hover { color: #ffffff; }
+.footer__copyright { color: #94a3b8; font-size: 0.875rem; }
+.footer__link-item svg { display: none; }
+
+/* ---- long-form pages (policies, help) ---- */
+.policy { max-width: 760px; margin: 0 auto; padding: 2.5rem 0 4rem; }
+.policy h1 { font-size: clamp(2rem, 6vw, 2.75rem); margin-bottom: 0.5rem; }
+.policy h2 { font-size: 1.5rem; margin-top: 2.5rem; padding-top: 0.25rem; }
+.policy h3 { font-size: 1.15rem; margin-top: 1.75rem; }
+.policy p, .policy li { line-height: 1.7; }
+.policy .updated { color: var(--muted); font-size: 0.95rem; }
+.policy blockquote {
+  border-left: 4px solid var(--coral);
+  background: var(--card);
+  color: var(--ink);
+  padding: 0.75rem 1rem;
+  border-radius: 0 12px 12px 0;
+}
+/* Long URLs and email addresses wrap instead of pushing the page sideways. */
+.policy a, .policy code { overflow-wrap: anywhere; }
+
+/* Docusaurus dresses every <table> with display:block + overflow, which clips it on a phone. These
+   pages use lists instead of tables; if one is ever added, it reads as a plain ruled table. */
+.markdown table { display: table; width: 100%; border-collapse: collapse; }
+.markdown table thead, .markdown table tr, .markdown table tr:nth-child(2n) { background: transparent; }
+.markdown table th, .markdown table td { border: 0; border-bottom: 1px solid var(--line); padding: 0.5rem 0.75rem 0.5rem 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; transition: none !important; }
+}

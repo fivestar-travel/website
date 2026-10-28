@@ -1,0 +1,153 @@
+/* Flat colors only: no gradients (docs/brand/README.md in the app repo). */
+
+.hero {
+  background: var(--paper);
+  padding: 3.5rem 0 3rem;
+  border-bottom: 1px solid var(--line);
+}
+.heroInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+.heroText { min-width: 0; }
+.kicker {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--coral-ink);
+  margin-bottom: 0.75rem;
+}
+.title {
+  font-size: clamp(2.2rem, 7vw, 3.6rem);
+  line-height: 1.08;
+  margin-bottom: 1.25rem;
+}
+.lede {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 36rem;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin: 1.75rem 0 1rem;
+}
+.primary { min-width: 12rem; }
+.secondary { font-weight: 500; }
+.note { font-size: 0.95rem; color: var(--muted); margin: 0; }
+
+/* A drawing of the conversation, not a screenshot. */
+.sample {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  min-width: 0;
+}
+.bubbleYou {
+  align-self: flex-end;
+  max-width: 85%;
+  background: var(--indigo);
+  color: #ffffff;
+  padding: 0.7rem 1rem;
+  border-radius: 18px 18px 4px 18px;
+  font-size: 0.95rem;
+}
+.bubbleStar {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  max-width: 92%;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 0.7rem 1rem;
+  border-radius: 18px 18px 18px 4px;
+  font-size: 0.95rem;
+}
+.bubbleStar img { flex: none; }
+.pins { display: flex; gap: 0.6rem; padding-left: 2.6rem; }
+.pin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--midnight);
+}
+.pinCoral { background: var(--coral); }
+.pinGolden { background: var(--golden); }
+.pinMint { background: #31c4bd; }
+
+.lightOnly { display: block; }
+.darkOnly { display: none; }
+[data-theme='dark'] .lightOnly { display: none; }
+[data-theme='dark'] .darkOnly { display: block; }
+
+.section { padding: 3.5rem 0; }
+.sectionTitle { font-size: clamp(1.6rem, 5vw, 2.2rem); margin-bottom: 1.25rem; }
+.band { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.narrow { max-width: 820px; }
+.small { font-size: 0.95rem; color: var(--muted); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.4rem 1.4rem 1.1rem;
+  min-width: 0;
+}
+.card h3 { font-size: 1.2rem; margin: 0.75rem 0 0.5rem; }
+.card p { color: var(--muted); line-height: 1.6; margin: 0; }
+.dot { display: block; width: 0.9rem; height: 0.9rem; border-radius: 999px; }
+.coral { background: var(--coral); }
+.indigo { background: var(--indigo); }
+.golden { background: var(--golden); }
+.sky { background: #22c1ff; }
+.mint { background: #31c4bd; }
+.violet { background: #7c3aed; }
+
+.plainList { padding-left: 1.2rem; }
+.plainList li { margin-bottom: 0.8rem; line-height: 1.65; }
+
+.twoUp { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; }
+.twoUp p { line-height: 1.7; }
+
+.closing {
+  background: var(--midnight);
+  color: #f8fafc;
+  text-align: center;
+}
+.closing h2 { color: #f8fafc; font-size: clamp(1.8rem, 6vw, 2.4rem); margin: 0.75rem 0 0.5rem; }
+.closing p { color: #cbd5e1; }
+.closing img { display: inline-block; }
+.madeBy { margin: 1.5rem 0 0; font-size: 0.95rem; }
+.madeBy a { color: #a5b4fc; }
+
+@media (max-width: 996px) {
+  .heroInner { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .hero { padding: 2.25rem 0 2rem; }
+  .grid, .twoUp { grid-template-columns: minmax(0, 1fr); }
+  .twoUp { gap: 0.5rem; }
+  .section { padding: 2.5rem 0; }
+  .primary { width: 100%; }
+}
