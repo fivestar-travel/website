@@ -84,7 +84,7 @@ This is optional and described in full in [Email and calendar access](#email-and
 ### On this website
 
 askfivestar.com is a static site. It sets no cookies of its own and runs no analytics. Our hosting provider
-(Cloudflare) processes standard request data, such as your IP address, to serve and protect the site. A light or
+(GitHub Pages) processes standard request data, such as your IP address, to serve and protect the site. A light or
 dark theme choice may be saved in your browser.
 
 ## Email and calendar access
@@ -165,16 +165,26 @@ ask your organization's administrator (work or school accounts).
 FiveStar can give you a personal forwarding address. If you forward a booking confirmation to it, FiveStar reads
 that message, adds the booking to your trips and learns from it as described above. Mail sent to the address
 passes through Cloudflare's email routing on its way to FiveStar. FiveStar reads only mail sent to your forwarding
-address, never your mailbox, and does not keep the message after reading it. Treat the address like a password:
-anyone who has it can send bookings to your trips. You can turn the address off, or replace it with a new one, in
-your account.
+address, never your mailbox, and does not keep the message after reading it: only the bookings and preferences it
+found, a fingerprint of the message (so it is read once), and the date and outcome of the last one. One exception: when
+Gmail sends a confirmation code to set up automatic forwarding, FiveStar keeps that code and link, encrypted, so it
+can show them to you, and deletes them after 7 days or when you replace the address. Treat the address like a
+password: anyone who has it can send bookings to your trips. You can replace it with a new one in your account at any
+time, and the old one stops working at once; "Forget everything" removes it.
 
 ### Calendar subscription (.ics) links
 
 If you give FiveStar a calendar's subscription link (an address ending in `.ics`, which most calendar apps offer),
 FiveStar fetches that link from time to time to read the events on it and find your trips and travel dates. It
 keeps the link only to do that, uses the events only as described above, and deletes the link when you remove it.
-Remove the link in FiveStar, or reset the private link in your calendar app, to stop it.
+Remove the link in FiveStar, or reset the private link in your calendar app, to stop it. Trips it already added
+stay until you remove them.
+
+### Your trips feed
+
+FiveStar can also give you a private link to your own trips in calendar format, so a calendar app (such as Apple
+Calendar) can show them. Anyone with the link can see the trips on it (places and dates, never booking numbers), so
+treat it like a password. You can replace the link or turn it off in your account at any time.
 
 ## How FiveStar uses AI
 
@@ -213,7 +223,8 @@ from reading another's memory or check-ins. Your browser never talks to the engi
 We use these service providers, each only to run FiveStar:
 
 - **Google Cloud**: hosting, storage, AI models (Vertex AI), speech-to-text and text-to-speech.
-- **Cloudflare**: DNS, this website's hosting, and routing mail sent to your forwarding address.
+- **Cloudflare**: DNS, and routing mail sent to your forwarding address.
+- **GitHub** (GitHub Pages): hosting this website, askfivestar.com. It does not host the app.
 - **Your sign-in provider** (Google, Microsoft, Amazon, X or Facebook): to sign you in, and for Google and
   Microsoft, the email and calendar access you choose to give.
 - **MET Norway** (weather): our server asks for the forecast at the map's position rounded to about one kilometer.
@@ -254,7 +265,8 @@ FiveStar (askfivestar.ai) uses only what it needs to work. There are no advertis
 In the app, at any time:
 
 - See and remove anything FiveStar remembers (**What FiveStar remembers**), or tap **Forget everything about me** to
-  erase your memory, interests, preferences, trips and email-reading progress, and disconnect Gmail.
+  erase your memory, interests, preferences, trips and email-reading progress, disconnect every email and calendar
+  connection, and remove your forwarding address, calendar link and trips feed.
 - See and delete your check-ins (**Your check-ins** in your account), one at a time or all at once.
 - Edit or delete your reviews.
 - Disconnect any email or calendar connection.
