@@ -68,7 +68,7 @@ want linked.
 
 ## Ask us to delete everything
 
-Email [support@lucenia.io](mailto:support@lucenia.io) from the email address on your FiveStar account (or tell us
+Email [support@askfivestar.com](mailto:support@askfivestar.com) from the email address on your FiveStar account (or tell us
 which sign-in you use), with the subject "Delete my FiveStar data". We will delete your account and everything
 linked to it: memory, interests, preferences, trips, check-ins, reviews, linked sign-ins and connections, and revoke
 any email or calendar access. Places you added or corrected stay, without your name. We confirm by email when it is

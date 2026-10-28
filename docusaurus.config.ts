@@ -45,7 +45,7 @@ const config: Config = {
         operatingSystem: 'Web',
         description: DESCRIPTION,
         url: APP,
-        publisher: {'@type': 'Organization', name: 'Lucenia, Inc.', email: 'support@lucenia.io'},
+        publisher: {'@type': 'Organization', name: 'FiveStar', email: 'support@askfivestar.com'},
       }),
     },
   ],
@@ -100,10 +100,10 @@ const config: Config = {
         },
         {
           title: 'Contact',
-          items: [{label: 'support@lucenia.io', href: 'mailto:support@lucenia.io'}],
+          items: [{label: 'support@askfivestar.com', href: 'mailto:support@askfivestar.com'}],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} Lucenia, Inc. FiveStar is made by Lucenia.`,
+      copyright: `© ${new Date().getFullYear()} FiveStar`,
     },
   } satisfies Preset.ThemeConfig,
 };

@@ -9,7 +9,7 @@ hide_table_of_contents: true
 
 _Last updated October 28, 2026._
 
-These terms are an agreement between you and Lucenia, Inc. ("Lucenia", "we", "us"), which operates FiveStar at
+These terms are an agreement between you and FiveStar ("FiveStar", "we", "us"), which runs FiveStar at
 [askfivestar.ai](https://askfivestar.ai) and this website. By using FiveStar you agree to them. If you do not
 agree, please do not use FiveStar.
 
@@ -59,11 +59,11 @@ suspend accounts that do.
 ## Venues and offers
 
 Places shown in FiveStar are independent businesses. If a venue offers you a deal, discount or other offer through
-FiveStar, the offer is made by that venue, not by Lucenia. The venue is responsible for the offer, its terms, and
+FiveStar, the offer is made by that venue, not by FiveStar. The venue is responsible for the offer, its terms, and
 honoring it, and for the goods and services it provides. Offers in FiveStar are always labeled as offers and never
 buy a place's ranking, reviews or check-ins. We are not responsible for a venue's products, services, conduct or
 failure to honor an offer, though we want to hear about it at
-[support@lucenia.io](mailto:support@lucenia.io).
+[support@askfivestar.com](mailto:support@askfivestar.com).
 
 ## Connected accounts
 
@@ -101,7 +101,7 @@ not promise the service will be uninterrupted or error-free.
 
 ## Limitation of liability
 
-To the extent the law allows, Lucenia will not be liable for indirect, incidental, special, consequential or
+To the extent the law allows, FiveStar will not be liable for indirect, incidental, special, consequential or
 punitive damages, or for lost profits, data, travel plans or opportunities, arising from your use of FiveStar.
 Our total liability for any claim relating to FiveStar is limited to the greater of the amount you paid us for
 FiveStar in the 12 months before the claim, or US $50. Some places do not allow these limits, so they may not
@@ -109,7 +109,7 @@ apply to you, and nothing in these terms limits rights you have under consumer l
 
 ## Indemnity
 
-If you use FiveStar in breach of these terms or the law, and that leads to a claim against Lucenia, you agree to
+If you use FiveStar in breach of these terms or the law, and that leads to a claim against FiveStar, you agree to
 cover our reasonable losses and costs from it, to the extent the law allows.
 
 ## Governing law
@@ -125,4 +125,4 @@ they take effect. If you keep using FiveStar after that, the new terms apply.
 
 ## Contact
 
-FiveStar is operated by Lucenia, Inc. Questions about these terms: [support@lucenia.io](mailto:support@lucenia.io).
+Questions about these terms: [support@askfivestar.com](mailto:support@askfivestar.com).

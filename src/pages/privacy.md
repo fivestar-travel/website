@@ -9,12 +9,12 @@ hide_table_of_contents: true
 
 _Last updated October 28, 2026._
 
-FiveStar is a personal AI travel concierge at [askfivestar.ai](https://askfivestar.ai). It is operated by
-Lucenia, Inc. ("Lucenia", "we", "us"). This policy covers the FiveStar app and this website,
+FiveStar is a personal AI travel concierge at [askfivestar.ai](https://askfivestar.ai). In this policy
+"FiveStar", "we" and "us" mean the people who run it. This policy covers the FiveStar app and this website,
 askfivestar.com. It says what we collect, why, where it is kept, for how long, who else touches it, and how you
 delete it.
 
-If you have a question, write to [support@lucenia.io](mailto:support@lucenia.io).
+If you have a question, write to [support@askfivestar.com](mailto:support@askfivestar.com).
 
 ## The short version
 
@@ -105,7 +105,7 @@ like to travel. Every one of these connections is **off until you turn it on**, 
 - **No ads, no sale, no training.** Data from your email or calendar is never used for advertising or ad
   targeting, never sold, never used to build profiles for anyone else, and never used to train or improve general
   AI models (ours or anyone else's).
-- **No human reading.** No person at Lucenia reads your email or calendar data, except with your explicit consent
+- **No human reading.** No person at FiveStar reads your email or calendar data, except with your explicit consent
   for specific messages (for example when you ask us for help with a problem), when it is necessary for security
   (such as investigating abuse), to comply with the law, or when the data has been aggregated and anonymized for
   internal operations.
@@ -211,7 +211,7 @@ never your coordinates, name or account.
 ## Where your data is kept
 
 FiveStar runs on Google Cloud. Your account data, memory, trips, check-ins, reviews and connections are stored in a
-Lucenia search engine on Google Cloud servers in the United States. AI processing on Vertex AI may take place in
+search engine on Google Cloud servers in the United States. AI processing on Vertex AI may take place in
 Google data centers in other countries. Data is encrypted in transit (HTTPS) and at rest by Google Cloud, and email
 and calendar tokens are additionally encrypted by FiveStar.
 
@@ -273,7 +273,7 @@ In the app, at any time:
 - Remove a linked sign-in.
 
 The step-by-step guide is at [Delete your data](/data-deletion). To delete your whole account, or to ask for a copy
-of your data or a correction, email [support@lucenia.io](mailto:support@lucenia.io) from the address on your
+of your data or a correction, email [support@askfivestar.com](mailto:support@askfivestar.com) from the address on your
 account. We answer within 30 days. Depending on where you live (for example the EU, the UK or California) you may
 have further rights, including to object to or restrict processing and to complain to your data protection
 authority. We will not treat you differently for using them.
@@ -300,4 +300,4 @@ they take effect. The previous versions are kept in our records.
 
 ## Contact
 
-FiveStar is operated by Lucenia, Inc. Email [support@lucenia.io](mailto:support@lucenia.io).
+Email [support@askfivestar.com](mailto:support@askfivestar.com).

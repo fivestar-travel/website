@@ -186,7 +186,7 @@ function Closing(): ReactNode {
           Open FiveStar
         </Link>
         <p className={styles.madeBy}>
-          FiveStar is made by Lucenia. Questions: <Link href="mailto:support@lucenia.io">support@lucenia.io</Link>
+          Questions? <Link href="mailto:support@askfivestar.com">support@askfivestar.com</Link>
         </p>
       </div>
     </section>

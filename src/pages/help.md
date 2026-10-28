@@ -51,5 +51,5 @@ way to delete your data is on [Delete your data](/data-deletion).
 
 ## Something's wrong, or I have an idea
 
-Email [support@lucenia.io](mailto:support@lucenia.io). If a place's details are wrong, you can also correct them when you
+Email [support@askfivestar.com](mailto:support@askfivestar.com). If a place's details are wrong, you can also correct them when you
 check in there.
