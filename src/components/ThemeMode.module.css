@@ -1,0 +1,74 @@
+/* The theme control: one icon button, and a small menu (Auto, Light, Dark). Flat colors only. */
+.wrap { position: relative; display: inline-flex; align-items: center; }
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.button:hover { color: var(--ink); background: var(--card); }
+.button:focus-visible { outline: 2px solid var(--indigo-ink); outline-offset: 2px; }
+.badge {
+  position: absolute;
+  right: 5px;
+  bottom: 6px;
+  min-width: 11px;
+  padding: 0 2px;
+  border-radius: 3px;
+  background: var(--indigo);
+  color: #ffffff;
+  font: 700 8px/11px var(--font-sans);
+}
+.menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 300;
+  width: 15.5rem;
+  padding: 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.16);
+}
+.option {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.55rem 0.6rem;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink);
+  font: 500 0.92rem/1.3 var(--font-sans);
+  text-align: left;
+  cursor: pointer;
+}
+.option:hover { background: var(--paper); }
+.option:focus-visible { outline: 2px solid var(--indigo-ink); outline-offset: -2px; }
+.on { background: var(--indigo-wash); }
+.optionIcon { color: var(--muted); display: inline-flex; padding-top: 1px; }
+.on .optionIcon, .check { color: var(--indigo-ink); }
+.optionText { flex: 1; min-width: 0; }
+.optionLabel { display: block; }
+.optionNote { display: block; font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.1rem; }
+.check { flex: none; margin-top: 2px; }
+
+/* On a phone the menu spans the screen under the navbar, inside the safe area, so it is never clipped. */
+@media (max-width: 996px) {
+  .menu {
+    position: fixed;
+    top: calc(var(--ifm-navbar-height) + 6px);
+    left: max(1rem, env(safe-area-inset-left));
+    right: max(1rem, env(safe-area-inset-right));
+    width: auto;
+  }
+}

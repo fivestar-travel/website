@@ -2,11 +2,14 @@
  * FiveStar's site, by the brand rules in the app repo (docs/brand/README.md):
  *   - no gradients, anywhere: every fill and background is one flat color
  *   - Playfair Display for the wordmark and headings, Inter for everything else (self-hosted, no font CDN)
+ *   - one exception, by the owner's call: Caveat, a handwritten face, for the home page's "Go live a little." and a
+ *     few hand-drawn notes beside it (--font-sketch); nowhere else
  *   - Sunset Coral fills carry Midnight text, never white; coral TEXT uses the ink value
  *   - the mark on a dark ground is mark-on-dark.svg
  */
 @import '@fontsource-variable/inter/index.css';
 @import '@fontsource-variable/playfair-display/index.css';
+@import '@fontsource-variable/caveat/index.css';
 
 :root {
   --coral: #ff5a4f;
@@ -19,6 +22,10 @@
   --cloud: #e2e8f0;
   --sand: #f8fafc;
   --cream: #fff8ef;
+  --mint: #31c4bd;
+  --sky: #22c1ff;
+  --violet: #7c3aed;
+  --indigo-wash: #eef1ff;
 
   --paper: var(--sand);
   --card: #ffffff;
@@ -27,6 +34,7 @@
   --line: var(--cloud);
 
   --font-display: 'Playfair Display Variable', Georgia, 'Times New Roman', serif;
+  --font-sketch: 'Caveat Variable', 'Segoe Print', 'Bradley Hand', cursive;
   --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   --ifm-font-family-base: var(--font-sans);
@@ -67,6 +75,7 @@
   --muted: #94a3b8;
   --line: #334155;
   --cream: #1e293b;
+  --indigo-wash: #252f52;
 
   --ifm-color-primary: #a5b4fc;
   --ifm-color-primary-dark: #8b9cfb;
@@ -120,10 +129,13 @@ main .container {
 .navbar-cta:hover, .button--coral:hover { background: #ff7a70; color: var(--midnight) !important; text-decoration: none; }
 .navbar-cta svg { display: none; } /* no "external link" arrow on the button */
 
-/* On a phone the theme moves every navbar item into the sidebar; keep "Open FiveStar" in view. */
+/* On a phone the theme moves every navbar item into the sidebar; keep "Ask FiveStar" and the theme control in view. */
 @media (max-width: 996px) {
   .navbar__items--right > .navbar-cta { display: inline-flex; align-items: center; font-size: 0.9rem; padding: 0.35rem 0.8rem; }
+  .navbar__items--right > [data-theme-mode-control] { display: inline-flex; }
 }
+/* The sidebar has its own copy of the control; the one in the bar is enough. */
+.navbar-sidebar [data-theme-mode-control] { display: none; }
 @media (max-width: 360px) {
   .navbar__title { display: none; }
 }
