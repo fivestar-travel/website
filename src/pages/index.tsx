@@ -1,99 +1,318 @@
-import type {ReactNode} from 'react';
+import {useEffect, useRef, type ReactNode} from 'react';
 import Link from '@docusaurus/Link';
 import useBrokenLinks from '@docusaurus/useBrokenLinks';
 import Layout from '@theme/Layout';
+import ChatScene from '@site/src/components/ChatScene';
 import styles from './index.module.css';
 
 const APP = 'https://askfivestar.ai';
 
-const FEATURES: {title: string; body: string; tone: 'coral' | 'indigo' | 'golden' | 'sky' | 'mint' | 'violet'}[] = [
-  {
-    title: 'Ask, and see it on the map',
-    body: 'Ask in plain words: dinner near the hotel, something to do with the kids, what’s on this weekend. FiveStar answers in conversation and pins each place on the map, with what’s open, how far it is, and directions.',
-    tone: 'coral',
-  },
-  {
-    title: 'Trips that keep up with you',
-    body: 'Plan a long weekend or a family trip day by day. FiveStar keeps it as a trip you can step through on the map, and changes it when you ask.',
-    tone: 'indigo',
-  },
+// Real questions; the app takes no question in its address, so each opens FiveStar to ask it there.
+const PROMPTS = [
+  'Best tacos within a 10 minute walk',
+  'Plan a Saturday in Austin with the kids',
+  'Sunset spots near me',
+  'Anything fun with the kids this afternoon?',
+  'Somewhere quiet for coffee and laptop work',
+  'Plan a long weekend in Lisbon',
+];
+
+type Tone = 'coral' | 'indigo' | 'golden' | 'mint' | 'sky' | 'violet';
+const TRICKS: {title: string; body: string; tone: Tone}[] = [
   {
     title: 'A memory that learns you',
-    body: 'Tell FiveStar once that your partner is vegetarian or that you like small coffee bars, and it remembers. You can see everything it remembers, and remove any of it.',
+    body: 'Tell it once that your partner is vegetarian or that you love a small coffee bar. It remembers, shows you everything it remembers, and forgets any of it when you say so.',
     tone: 'golden',
   },
   {
-    title: 'Check-ins, private to you',
-    body: 'Tap “I’m here” at a place to keep your own log of where you’ve been and to help keep the map right. Your check-ins are yours: nobody else sees them.',
+    title: '“I’m here” check-ins',
+    body: 'Tap “I’m here” at a place to keep your own log of where you’ve been. It’s private to you, and it helps keep the map right.',
     tone: 'mint',
   },
   {
-    title: 'Reviews from people who were there',
-    body: 'Rate a place and say what it was like. Reviews from travelers who checked in there carry a “Checked in” badge, so you can tell who has actually been.',
+    title: 'Reviews from people who went',
+    body: 'Reviews carry the writer’s name and picture, and a “Checked in” badge when they were actually there.',
+    tone: 'coral',
+  },
+  {
+    title: 'Weather on the map',
+    body: 'A little weather pill sits on the map, so you know about the umbrella before you’re halfway down the block.',
     tone: 'sky',
   },
   {
-    title: 'Your bookings, without the typing',
-    body: 'If you choose, FiveStar reads your flight and hotel confirmations from Gmail or Outlook, a forwarded email, or your calendar, and turns them into trips.',
+    title: 'Bookings, minus the typing',
+    body: 'If you choose, FiveStar reads flight and hotel confirmations from Gmail or Outlook, a forwarded email, or your calendar, and turns them into trips.',
+    tone: 'indigo',
+  },
+  {
+    title: 'Made for your phone',
+    body: 'It runs in your browser, nothing to install. Add it to your home screen and it opens like an app.',
     tone: 'violet',
   },
 ];
+
+/** The compass star, drawn small: six points, warm north-south, cool on the rising diagonal (the brand mark's axes). */
+function Star({className}: {className?: string}): ReactNode {
+  return (
+    <svg viewBox="-12 -12 24 24" width="22" height="22" className={className} aria-hidden="true">
+      <path d="M0 -11 2 0 0 11 -2 0Z" fill="var(--coral)" />
+      <path d="M9.5 5.5 -1 1.73 -9.5 -5.5 1 -1.73Z" fill="var(--golden)" />
+      <path d="M9.5 -5.5 1 1.73 -9.5 5.5 -1 -1.73Z" fill="var(--indigo)" />
+    </svg>
+  );
+}
+
+/** A hand-drawn squiggle, for underlining the sketch headline. */
+function Squiggle(): ReactNode {
+  return (
+    <svg className={styles.squiggle} viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M3 12 C 40 2, 70 18, 105 9 S 170 3, 205 11 S 265 15, 297 5" fill="none" stroke="var(--coral)" strokeWidth="5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+/** A hand-drawn arrow; `d` is the shaft, `head` the two strokes at its end. */
+function Arrow({d, head, className}: {d: string; head: string; className?: string}): ReactNode {
+  return (
+    <svg className={className} viewBox="0 0 120 80" aria-hidden="true">
+      <path d={d} fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+      <path d={head} fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+/** Adds `shown` to each [data-reveal] element as it scrolls into view (once). With reduced motion, nothing hides. */
+function useReveal() {
+  const root = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = root.current;
+    if (!el || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return undefined;
+    el.classList.add(styles.armed);
+    const io = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add(styles.shown);
+            io.unobserve(e.target);
+          }
+        }),
+      {rootMargin: '0px 0px -10% 0px'},
+    );
+    el.querySelectorAll('[data-reveal]').forEach((t) => io.observe(t));
+    return () => io.disconnect();
+  }, []);
+  return root;
+}
 
 function Hero(): ReactNode {
   return (
     <header className={styles.hero}>
       <div className={`container ${styles.heroInner}`}>
         <div className={styles.heroText}>
-          <p className={styles.kicker}>Your personal AI concierge</p>
-          <h1 className={styles.title}>Go live a little. FiveStar plans the rest.</h1>
+          <h1 className={styles.title}>
+            <span className={styles.sketch}>
+              Go live a little.
+              <Squiggle />
+            </span>
+            <span className={styles.titleRest}>FiveStar plans the rest.</span>
+          </h1>
           <p className={styles.lede}>
-            FiveStar is a travel concierge for anyone: on a business trip, a free evening, or a family vacation.
-            Discover places, plan your days, and get recommendations that fit you, wherever you are.
+            Ask for tacos, a rainy-day plan or the best seat for the sunset, in plain words. FiveStar answers like a
+            friend who knows the town, and puts every place on the map.
           </p>
           <div className={styles.actions}>
             <Link className={`button button--lg button--coral ${styles.primary}`} href={APP}>
-              Open FiveStar
+              <Star className={styles.ctaStar} />
+              Ask FiveStar
             </Link>
             <Link className={styles.secondary} to="#your-email-and-calendar">
               How FiveStar uses your email and calendar
             </Link>
           </div>
           <p className={styles.note}>
-            FiveStar runs in your browser at <Link href={APP}>askfivestar.ai</Link>. Free to use, no app to install.
+            Free, in your browser at <Link href={APP}>askfivestar.ai</Link>. Nothing to install.
           </p>
         </div>
-        <div className={styles.sample} aria-hidden="true">
-          <div className={styles.bubbleYou}>Anything fun with the kids this afternoon, close to the hotel?</div>
-          <div className={styles.bubbleStar}>
-            <img src="/img/mark.svg" alt="" width={28} height={28} className={styles.lightOnly} />
-            <img src="/img/mark-on-dark.svg" alt="" width={28} height={28} className={styles.darkOnly} />
-            <span>Here are three that are open now and a short walk away. They’re on the map, with directions.</span>
-          </div>
-          <div className={styles.pins}>
-            <span className={`${styles.pin} ${styles.pinCoral}`}>1</span>
-            <span className={`${styles.pin} ${styles.pinGolden}`}>2</span>
-            <span className={`${styles.pin} ${styles.pinMint}`}>3</span>
-          </div>
-        </div>
+        <ChatScene />
       </div>
     </header>
   );
 }
 
-function Features(): ReactNode {
+function TryAsking(): ReactNode {
+  return (
+    <section className={styles.try} aria-labelledby="try-asking">
+      <div className="container">
+        <h2 id="try-asking" className={styles.tryLabel}>
+          try asking…
+          <Arrow className={styles.tryArrow} d="M8 20 C 40 10, 70 30, 96 60" head="M80 58 L 97 62 L 95 44" />
+        </h2>
+        <ul className={styles.prompts}>
+          {PROMPTS.map((p) => (
+            <li key={p}>
+              <Link className={styles.prompt} href={APP} title="Opens FiveStar, where you can ask it">
+                “{p}”
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <p className={styles.tryNote}>Each one opens FiveStar. Ask it there, in your own words.</p>
+      </div>
+    </section>
+  );
+}
+
+function MapSection(): ReactNode {
   return (
     <section className={styles.section}>
-      <div className="container">
-        <h2 className={styles.sectionTitle}>What FiveStar does</h2>
-        <div className={styles.grid}>
-          {FEATURES.map((f) => (
-            <article key={f.title} className={styles.card}>
-              <span className={`${styles.dot} ${styles[f.tone]}`} aria-hidden="true" />
-              <h3>{f.title}</h3>
-              <p>{f.body}</p>
-            </article>
-          ))}
+      <div className={`container ${styles.mapGrid}`}>
+        <div className={styles.copy}>
+          <h2 className={styles.sectionTitle}>The map follows the conversation</h2>
+          <p>
+            Every answer lands on the map as numbered pins, with a card for each place: what it is, how far, and how
+            many minutes on foot. Swipe through the cards, tap Navigate, and FiveStar draws the way there, turn by turn.
+          </p>
+          <ul className={styles.notes}>
+            <li>
+              <span className={`${styles.noteDot} ${styles.coral}`} aria-hidden="true"><span>1</span></span>Pins numbered in the order it suggests them
+            </li>
+            <li>
+              <span className={`${styles.noteDot} ${styles.golden}`} aria-hidden="true"><span>2</span></span>Cards you swipe, one per place
+            </li>
+            <li>
+              <span className={`${styles.noteDot} ${styles.mint}`} aria-hidden="true"><span>3</span></span>Real walking minutes from where you are
+            </li>
+          </ul>
         </div>
+        <figure className={styles.phoneWrap} data-reveal>
+          <div className={styles.phone}>
+            <img
+              src="/img/screens/phone-tacos-light.webp"
+              width={780}
+              height={1688}
+              loading="lazy"
+              alt="FiveStar on a phone, after asking for the best tacos within a 10 minute walk near South Congress in Austin: a map with numbered red pins, and a swipeable card for Torchy’s Tacos, a 7 minute walk, with a Navigate button."
+            />
+          </div>
+          <span className={`${styles.callout} ${styles.calloutPins}`} aria-hidden="true">
+            numbered pins
+            <Arrow className={styles.calloutArrow} d="M100 12 C 70 10, 40 25, 22 58" head="M14 44 L 21 60 L 36 52" />
+          </span>
+          <span className={`${styles.callout} ${styles.calloutCards}`} aria-hidden="true">
+            swipe for more
+            <Arrow className={styles.calloutArrow} d="M100 18 C 75 30, 45 30, 18 50" head="M18 34 L 16 51 L 33 56" />
+          </span>
+          <figcaption className={styles.caption}>A real answer, on a phone, near South Congress in Austin.</figcaption>
+        </figure>
+      </div>
+    </section>
+  );
+}
+
+function PlanSection(): ReactNode {
+  return (
+    <section className={`${styles.section} ${styles.band}`}>
+      <div className={`container ${styles.planGrid}`}>
+        <figure className={styles.browserWrap} data-reveal>
+          <div className={styles.browser}>
+            <div className={styles.browserBar} aria-hidden="true">
+              <i />
+              <i />
+              <i />
+              <span>askfivestar.ai</span>
+            </div>
+            <img
+              src="/img/screens/desktop-plan-light.webp"
+              width={1600}
+              height={1000}
+              loading="lazy"
+              alt="FiveStar on a laptop, answering “Plan a Saturday in Austin with the kids”: the plan in the conversation on the left, starting at Zilker Park, and the map of Austin on the right with eleven numbered pins and a row of place cards."
+            />
+          </div>
+          <figcaption className={styles.caption}>“Plan a Saturday in Austin with the kids,” answered live.</figcaption>
+        </figure>
+        <div className={styles.copy}>
+          <h2 className={styles.sectionTitle}>A whole Saturday, sorted</h2>
+          <p>
+            Ask for an afternoon, a day or a long weekend, and FiveStar lays it out in order, with the walk or the drive
+            between each stop. Change your mind and it changes the plan.
+          </p>
+          <div className={styles.fly}>
+            <svg className={styles.flyPath} viewBox="0 0 320 90" aria-hidden="true">
+              <path d="M18 70 C 70 10, 120 10, 160 45 S 250 85, 302 22" fill="none" stroke="var(--indigo-ink)" strokeWidth="3" strokeDasharray="2 9" strokeLinecap="round" />
+              <circle cx="18" cy="70" r="9" fill="var(--mint)" />
+              <circle cx="160" cy="45" r="9" fill="var(--golden)" />
+              <circle cx="302" cy="22" r="9" fill="var(--coral)" />
+              <g className={styles.flyStar}>
+                <path d="M0 -9 1.6 0 0 9 -1.6 0Z" fill="var(--coral)" />
+                <path d="M7.8 4.5 -0.8 1.4 -7.8 -4.5 0.8 -1.4Z" fill="var(--golden)" />
+                <path d="M7.8 -4.5 0.8 1.4 -7.8 4.5 -0.8 -1.4Z" fill="var(--indigo)" />
+              </g>
+            </svg>
+            <p>
+              <strong>Then fly through it.</strong> Keep it as a trip and step through it stop by stop: Next, Back, and
+              the map glides to each place, with Navigate when you’re ready to go.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SunsetSection(): ReactNode {
+  return (
+    <section className={styles.section}>
+      <div className={`container ${styles.sunGrid}`}>
+        <div className={styles.copy}>
+          <h2 className={styles.sectionTitle}>Light by day, dark after sunset</h2>
+          <p>
+            FiveStar’s look follows the sun where you are, so the map is easy on the eyes at the taco stand at 10 pm.
+            Rather pick for yourself? Choose Light or Dark and it stays put.
+          </p>
+          <p className={styles.aside}>This page does it too. Come back after sunset.</p>
+        </div>
+        <div className={styles.pair} data-reveal>
+          <img
+            className={styles.pairDay}
+            src="/img/screens/desktop-tacos-light.webp"
+            width={1600}
+            height={1000}
+            loading="lazy"
+            alt="FiveStar in the light theme: the answer to “Best tacos within a 10 minute walk” beside a light map of South Congress with numbered pins."
+          />
+          <img
+            className={styles.pairNight}
+            src="/img/screens/desktop-tacos-dark.webp"
+            width={1600}
+            height={1000}
+            loading="lazy"
+            alt="The same question in the dark theme, with a dark map."
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Tricks(): ReactNode {
+  return (
+    <section className={`${styles.section} ${styles.band}`}>
+      <div className="container">
+        <h2 className={styles.sectionTitle}>A few more tricks</h2>
+        <ul className={styles.tricks}>
+          {TRICKS.map((t) => (
+            <li key={t.title} className={styles.trick}>
+              <span className={`${styles.trickMark} ${styles[t.tone]}`} aria-hidden="true">
+                <Star className={styles.trickStar} />
+              </span>
+              <div>
+                <h3>{t.title}</h3>
+                <p>{t.body}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
@@ -103,7 +322,7 @@ function EmailAndCalendar(): ReactNode {
   // The hero links here; a raw id is invisible to the broken-anchor check unless it is registered.
   useBrokenLinks().collectAnchor('your-email-and-calendar');
   return (
-    <section className={`${styles.section} ${styles.band}`} id="your-email-and-calendar">
+    <section className={styles.section} id="your-email-and-calendar">
       <div className={`container ${styles.narrow}`}>
         <h2 className={styles.sectionTitle}>Why FiveStar asks for your email and calendar</h2>
         <p>
@@ -153,7 +372,7 @@ function EmailAndCalendar(): ReactNode {
 
 function SignIn(): ReactNode {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} ${styles.band}`}>
       <div className={`container ${styles.twoUp}`}>
         <div>
           <h2 className={styles.sectionTitle}>Sign in, or don’t</h2>
@@ -179,14 +398,16 @@ function Closing(): ReactNode {
   return (
     <section className={`${styles.section} ${styles.closing}`}>
       <div className="container">
-        <img src="/img/mark-on-dark.svg" alt="" width={56} height={56} />
+        <img className={styles.closingMark} src="/img/mark-on-dark.svg" alt="" width={64} height={64} />
         <h2>Where to next?</h2>
-        <p>Ask FiveStar. It’s free, and it works on your phone.</p>
-        <Link className="button button--lg button--coral" href={APP}>
-          Open FiveStar
+        <p>Ask FiveStar. It’s free, and it fits in your pocket.</p>
+        <Link className={`button button--lg button--coral ${styles.primary}`} href={APP}>
+          <Star className={styles.ctaStar} />
+          Ask FiveStar
         </Link>
         <p className={styles.madeBy}>
-          Questions? <Link href="mailto:support@askfivestar.com">support@askfivestar.com</Link>
+          Questions, ideas, a great taco spot we missed?{' '}
+          <Link href="mailto:support@askfivestar.com">support@askfivestar.com</Link>
         </p>
       </div>
     </section>
@@ -194,17 +415,24 @@ function Closing(): ReactNode {
 }
 
 export default function Home(): ReactNode {
+  const root = useReveal();
   return (
     <Layout
       title="Your personal AI concierge"
       description="FiveStar is a personal AI travel concierge: ask in plain words, see places on a map, plan trips, and let it learn how you like to travel.">
-      <Hero />
-      <main>
-        <Features />
-        <EmailAndCalendar />
-        <SignIn />
-        <Closing />
-      </main>
+      <div ref={root}>
+        <Hero />
+        <main>
+          <TryAsking />
+          <MapSection />
+          <PlanSection />
+          <SunsetSection />
+          <Tricks />
+          <EmailAndCalendar />
+          <SignIn />
+          <Closing />
+        </main>
+      </div>
     </Layout>
   );
 }

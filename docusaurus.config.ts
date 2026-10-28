@@ -1,5 +1,6 @@
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import {themeScript} from './src/lib/sun';
 
 // askfivestar.com is the public face of FiveStar: what it is, and the policies the sign-in
 // providers' reviewers (Google, Microsoft, Amazon, Meta) read. The app itself lives at askfivestar.ai.
@@ -50,6 +51,15 @@ const config: Config = {
     },
   ],
 
+  // Light or dark by the sun, like the app (src/lib/sun.ts): decided before the first paint by this script, which
+  // runs after Docusaurus's own color-mode script (a site plugin's tags come after the theme's), so its word is final.
+  plugins: [
+    () => ({
+      name: 'fivestar-sun-theme',
+      injectHtmlTags: () => ({preBodyTags: [{tagName: 'script', innerHTML: themeScript()}]}),
+    }),
+  ],
+
   presets: [
     [
       'classic',
@@ -69,14 +79,16 @@ const config: Config = {
       {name: 'theme-color', content: '#F8FAFC', media: '(prefers-color-scheme: light)'},
       {name: 'theme-color', content: '#0F172A', media: '(prefers-color-scheme: dark)'},
     ],
-    colorMode: {defaultMode: 'light', respectPrefersColorScheme: true},
+    // The theme control is ours (src/components/ThemeMode.tsx: Auto by the sun, Light, Dark), not Docusaurus's switch.
+    colorMode: {defaultMode: 'light', disableSwitch: true, respectPrefersColorScheme: false},
     navbar: {
       title: 'FiveStar',
       logo: {alt: 'FiveStar', src: 'img/mark.svg', srcDark: 'img/mark-on-dark.svg', width: 30, height: 30},
       items: [
         {to: '/help', label: 'Help', position: 'left'},
         {to: '/privacy', label: 'Privacy', position: 'left'},
-        {href: APP, label: 'Open FiveStar', position: 'right', className: 'navbar-cta'},
+        {type: 'custom-themeMode', position: 'right'},
+        {href: APP, label: 'Ask FiveStar', position: 'right', className: 'navbar-cta'},
       ],
     },
     footer: {
@@ -86,7 +98,7 @@ const config: Config = {
         {
           title: 'FiveStar',
           items: [
-            {label: 'Open FiveStar', href: APP},
+            {label: 'Ask FiveStar', href: APP},
             {label: 'Help and questions', to: '/help'},
           ],
         },
@@ -103,7 +115,7 @@ const config: Config = {
           items: [{label: 'support@askfivestar.com', href: 'mailto:support@askfivestar.com'}],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} FiveStar`,
+      copyright: `© ${new Date().getFullYear()} FiveStar. Made for wandering, snacking and getting a little lost on purpose.`,
     },
   } satisfies Preset.ThemeConfig,
 };
