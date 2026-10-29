@@ -25,6 +25,8 @@ If you have a question, write to [support@askfivestar.com](mailto:support@askfiv
 - Connecting Gmail, Outlook, a calendar or a forwarding address is optional. FiveStar uses that access only to find
   **your own travel bookings** and learn your travel preferences from them. It is read-only, it is never used for
   advertising, never sold, and never used to train general AI models.
+- Connecting an AI app (such as Claude or ChatGPT) to FiveStar is optional too. You choose what it can see, it never
+  sees your messages, events or booking numbers, and you can disconnect it at any time.
 - Your check-ins are private to you. Your reviews are public, with your name, because that is what a review is.
 - We do not sell your data, show ads, or use third-party analytics or advertising trackers.
 
@@ -110,8 +112,9 @@ like to travel. Every one of these connections is **off until you turn it on**, 
   (such as investigating abuse), to comply with the law, or when the data has been aggregated and anonymized for
   internal operations.
 - **No transfer.** We do not transfer this data to anyone except the service providers that process it for us to
-  provide these features (Google Cloud, which hosts FiveStar and runs its AI models), as needed to comply with the
-  law, or as part of a merger or acquisition with notice to you.
+  provide these features (Google Cloud, which hosts FiveStar and runs its AI models), to an AI app you connect
+  yourself and only as described in [Connected AI apps](#connected-ai-apps), as needed to comply with the law, or as
+  part of a merger or acquisition with notice to you.
 - **Stopping.** Disconnect at any time in your account in FiveStar. Disconnecting deletes the stored access token
   and, where the provider supports it, revokes FiveStar's access at the provider. "Forget everything about me" also
   disconnects and erases what was learned. You can also revoke access from your account at the provider at any
@@ -196,6 +199,29 @@ this data to train their models, and we do not use it to train any model either.
 When its own data is not enough (for example "what's on this weekend"), FiveStar may search the web through the AI
 model's web search tool. The search is written from your question and may include your town or your trip's city,
 never your coordinates, name or account.
+
+## Connected AI apps
+
+If you sign in, you can connect an AI app you already use (such as Claude, ChatGPT, Claude Code, VS Code or Cursor)
+to your FiveStar account, so it can plan trips with you. It is optional, and you start it yourself: the app sends you
+to FiveStar, you sign in, and a consent page names the app and lists what it is asking for. You can untick any of it.
+How to connect one, and everything it can do, is on our [developers page](/developers).
+
+If you connect an AI app to FiveStar, it can read your trips and travel preferences, including those FiveStar found in
+your travel email or calendar, but never your messages, events or booking numbers. You choose what it can see and can
+disconnect it at any time.
+
+- **What it can see and do.** Depending on what you allow: places, routes and the weather; your trips (where, when,
+  who is going, the hotel and the stops); changes to your trips; what FiveStar remembers about how you travel, as you
+  see it in the app; and saving new preferences you tell it.
+- **What it never gets.** Your emails or calendar events (their content, subjects, senders or attachments), booking
+  and confirmation numbers, your check-ins, review text, your connected accounts, your forwarding address or
+  calendar links, or anyone else's data. It cannot check in or write a review.
+- **What the app does with it.** What you share with an AI app is then handled under that app's own terms and privacy
+  policy, which you agreed to with its maker. FiveStar does not sell this data, use it for advertising, or use it to
+  train AI models.
+- **Stopping.** Disconnect any app at any time in FiveStar (Connected apps), which ends its access at once. "Forget
+  everything about me" disconnects every app.
 
 ## What is public
 
