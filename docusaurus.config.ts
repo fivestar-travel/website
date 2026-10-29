@@ -87,6 +87,7 @@ const config: Config = {
       items: [
         {to: '/help', label: 'Help', position: 'left'},
         {to: '/privacy', label: 'Privacy', position: 'left'},
+        {to: '/developers', label: 'Developers', position: 'left'},
         {type: 'custom-themeMode', position: 'right'},
         {href: APP, label: 'Ask FiveStar', position: 'right', className: 'navbar-cta'},
       ],
@@ -100,6 +101,7 @@ const config: Config = {
           items: [
             {label: 'Ask FiveStar', href: APP},
             {label: 'Help and questions', to: '/help'},
+            {label: 'Connect your AI app', to: '/developers'},
           ],
         },
         {
