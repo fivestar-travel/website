@@ -82,8 +82,8 @@ const config: Config = {
     // The theme control is ours (src/components/ThemeMode.tsx: Auto by the sun, Light, Dark), not Docusaurus's switch.
     colorMode: {defaultMode: 'light', disableSwitch: true, respectPrefersColorScheme: false},
     navbar: {
-      title: 'FiveStar',
-      logo: {alt: 'FiveStar', src: 'img/mark.svg', srcDark: 'img/mark-on-dark.svg', width: 30, height: 30},
+      // The logo is the whole lockup (the pin and the five/STAR wordmark), so the bar carries no separate title.
+      logo: {alt: 'FiveStar', src: 'img/logo-horizontal-transparent.svg', srcDark: 'img/logo-dark-transparent.svg', width: 141, height: 42},
       items: [
         {to: '/help', label: 'Help', position: 'left'},
         {to: '/privacy', label: 'Privacy', position: 'left'},
@@ -94,7 +94,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      logo: {alt: 'FiveStar', src: 'img/mark-on-dark.svg', width: 36, height: 36, href: '/'},
+      logo: {alt: 'FiveStar', src: 'img/mark-on-dark.svg', width: 28, height: 36, href: '/'},
       links: [
         {
           title: 'FiveStar',

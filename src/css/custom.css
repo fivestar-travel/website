@@ -26,6 +26,8 @@
   --sky: #22c1ff;
   --violet: #7c3aed;
   --indigo-wash: #eef1ff;
+  /* the logo's pin: Indigo on light, a lighter indigo on dark (as in the app) */
+  --mark-pin: #3b5bff;
 
   --paper: var(--sand);
   --card: #ffffff;
@@ -76,6 +78,7 @@
   --line: #334155;
   --cream: #1e293b;
   --indigo-wash: #252f52;
+  --mark-pin: #8ea2ff;
 
   --ifm-color-primary: #a5b4fc;
   --ifm-color-primary-dark: #8b9cfb;
@@ -112,7 +115,8 @@ main .container {
 /* ---- navbar ---- */
 .navbar__inner { max-width: 1120px; margin: 0 auto; }
 .navbar__brand { gap: 0.25rem; }
-.navbar__title { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--ink); }
+.navbar__logo { height: 2.6rem; }
+.navbar__logo img { height: 100%; width: auto; }
 .navbar__link { font-weight: 500; color: var(--muted); }
 .navbar__link:hover, .navbar__link--active { color: var(--ink); }
 
@@ -136,9 +140,6 @@ main .container {
 }
 /* The sidebar has its own copy of the control; the one in the bar is enough. */
 .navbar-sidebar [data-theme-mode-control] { display: none; }
-@media (max-width: 360px) {
-  .navbar__title { display: none; }
-}
 
 /* ---- footer: Midnight ground, so the mark is mark-on-dark ---- */
 .footer--dark { background-color: #0f172a; border-top: 1px solid var(--line); }
@@ -174,4 +175,18 @@ main .container {
 
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition: none !important; }
+}
+
+/* "FiveStar is thinking" (MarkThinking in src/components/Brand.tsx), as in the app: the star turns about its own center,
+   overshoots north, swings back and settles; for less motion, a pulse. */
+.markTurn { transform-box: fill-box; transform-origin: 50% 55.28%; animation: mark-turn 1.8s cubic-bezier(0.55, 0, 0.25, 1) infinite; }
+@keyframes mark-turn {
+  0% { transform: rotate(0deg); }
+  55% { transform: rotate(380deg); }
+  70% { transform: rotate(352deg); }
+  82%, 100% { transform: rotate(360deg); }
+}
+@keyframes mark-pulse { 50% { opacity: 0.6; } }
+@media (prefers-reduced-motion: reduce) {
+  .markTurn { animation: mark-pulse 1.8s ease-in-out infinite; }
 }
