@@ -1,8 +1,9 @@
 import {useEffect, useState, type ReactNode} from 'react';
 import styles from './ChatScene.module.css';
+import {Mark, MarkThinking} from './Brand';
 
 /**
- * The hero's little scene: a question types itself into the box, goes out as a bubble, the compass star thinks, the
+ * The hero's little scene: a question types itself into the box, goes out as a bubble, the logo's star turns while FiveStar thinks, the
  * answer streams in and its places drop onto the map, one pin at a time. Then the next question.
  *
  * Everything in it is from the live app: the questions were asked at askfivestar.ai as a guest (Austin, a Saturday
@@ -128,10 +129,7 @@ export default function ChatScene(): ReactNode {
               <div className={`${styles.you} ${f.sent ? styles.youIn : styles.youWait}`}>{s.ask}</div>
               {(f.thinking || f.words > 0) && (
                 <div className={styles.star}>
-                  <span className={`${styles.avatar} ${f.thinking ? styles.spinning : ''}`}>
-                    <img src="/img/mark.svg" alt="" width={26} height={26} className={styles.lightOnly} />
-                    <img src="/img/mark-on-dark.svg" alt="" width={26} height={26} className={styles.darkOnly} />
-                  </span>
+                  <span className={styles.avatar}>{f.thinking ? <MarkThinking ground="var(--cream)" /> : <Mark />}</span>
                   {f.thinking ? (
                     <span className={styles.dots}>
                       <i />
@@ -157,7 +155,7 @@ export default function ChatScene(): ReactNode {
         </div>
         <div className={styles.input}>
           <span className={styles.inputDisc}>
-            <img src="/img/mark-on-dark.svg" alt="" width={22} height={22} />
+            <img src="/img/mark-white.svg" alt="" width={17} height={22} />
           </span>
           <span className={styles.inputText}>
             {f.typed > 0 ? s.ask.slice(0, f.typed) : <span className={styles.placeholder}>Ask FiveStar anything…</span>}

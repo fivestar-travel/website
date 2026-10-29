@@ -87,8 +87,8 @@ export default function AgentScene(): ReactNode {
           <i />
           <span>your AI app</span>
           <b className={styles.badge}>
-            <img src="/img/mark.svg" alt="" width={16} height={16} className={styles.lightOnly} />
-            <img src="/img/mark-on-dark.svg" alt="" width={16} height={16} className={styles.darkOnly} />
+            <img src="/img/mark.svg" alt="" width={12} height={16} className={styles.lightOnly} />
+            <img src="/img/mark-on-dark.svg" alt="" width={12} height={16} className={styles.darkOnly} />
             FiveStar connected
           </b>
         </div>

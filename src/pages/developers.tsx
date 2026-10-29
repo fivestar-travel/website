@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import AgentScene from '@site/src/components/AgentScene';
 import styles from './developers.module.css';
+import {Star} from '@site/src/components/Brand';
 
 // Connected AI apps, as built in the app repo (docs/agents-mcp.md): one remote MCP server, signed-in travelers only.
 const APP = 'https://askfivestar.ai';
@@ -117,17 +118,6 @@ const GROUPS: Group[] = [
     tools: [{name: 'remember', does: 'Saves up to five things you said (“I’m vegetarian”, “no red-eyes”), so FiveStar knows them too.'}],
   },
 ];
-
-/** The compass star, drawn small (the brand mark's axes). */
-function Star({className}: {className?: string}): ReactNode {
-  return (
-    <svg viewBox="-12 -12 24 24" width="22" height="22" className={className} aria-hidden="true">
-      <path d="M0 -11 2 0 0 11 -2 0Z" fill="var(--coral)" />
-      <path d="M9.5 5.5 -1 1.73 -9.5 -5.5 1 -1.73Z" fill="var(--golden)" />
-      <path d="M9.5 -5.5 1 1.73 -9.5 5.5 -1 -1.73Z" fill="var(--indigo)" />
-    </svg>
-  );
-}
 
 function Squiggle(): ReactNode {
   return (
@@ -433,7 +423,7 @@ function Closing(): ReactNode {
   return (
     <section className={`${styles.section} ${styles.closing}`}>
       <div className="container">
-        <img className={styles.closingMark} src="/img/mark-on-dark.svg" alt="" width={64} height={64} />
+        <img className={styles.closingMark} src="/img/mark-on-dark.svg" alt="" width={49} height={64} />
         <h2>No AI app? No problem.</h2>
         <p>FiveStar plans trips all by itself, too.</p>
         <Link className={`button button--lg button--coral ${styles.primary}`} href={APP}>

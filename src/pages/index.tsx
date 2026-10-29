@@ -3,6 +3,8 @@ import Link from '@docusaurus/Link';
 import useBrokenLinks from '@docusaurus/useBrokenLinks';
 import Layout from '@theme/Layout';
 import ChatScene from '@site/src/components/ChatScene';
+import {Star} from '@site/src/components/Brand';
+import {NEEDLE_COLORS, PATHS} from '@site/src/components/mark.generated';
 import styles from './index.module.css';
 
 const APP = 'https://askfivestar.ai';
@@ -14,7 +16,7 @@ const PROMPTS = [
   'Sunset spots near me',
   'Anything fun with the kids this afternoon?',
   'Somewhere quiet for coffee and laptop work',
-  'Plan a long weekend in Lisbon',
+  'Plan a week-long family vacation in Maui',
 ];
 
 type Tone = 'coral' | 'indigo' | 'golden' | 'mint' | 'sky' | 'violet';
@@ -50,17 +52,6 @@ const TRICKS: {title: string; body: string; tone: Tone}[] = [
     tone: 'violet',
   },
 ];
-
-/** The compass star, drawn small: six points, warm north-south, cool on the rising diagonal (the brand mark's axes). */
-function Star({className}: {className?: string}): ReactNode {
-  return (
-    <svg viewBox="-12 -12 24 24" width="22" height="22" className={className} aria-hidden="true">
-      <path d="M0 -11 2 0 0 11 -2 0Z" fill="var(--coral)" />
-      <path d="M9.5 5.5 -1 1.73 -9.5 -5.5 1 -1.73Z" fill="var(--golden)" />
-      <path d="M9.5 -5.5 1 1.73 -9.5 5.5 -1 -1.73Z" fill="var(--indigo)" />
-    </svg>
-  );
-}
 
 /** A hand-drawn squiggle, for underlining the sketch headline. */
 function Squiggle(): ReactNode {
@@ -117,8 +108,8 @@ function Hero(): ReactNode {
             <span className={styles.titleRest}>FiveStar plans the rest.</span>
           </h1>
           <p className={styles.lede}>
-            Ask for tacos, a rainy-day plan or the best seat for the sunset, in plain words. FiveStar answers like a
-            friend who knows the town, and puts every place on the map.
+            Ask for tacos, the best seat for the sunset or a whole week away, in plain words. FiveStar answers like a
+            friend who knows the town, plans the trip day by day, and puts every place on the map.
           </p>
           <div className={styles.actions}>
             <Link className={`button button--lg button--coral ${styles.primary}`} href={APP}>
@@ -188,10 +179,10 @@ function MapSection(): ReactNode {
           <div className={styles.phone}>
             <img
               src="/img/screens/phone-tacos-light.webp"
-              width={780}
-              height={1688}
+              width={468}
+              height={1014}
               loading="lazy"
-              alt="FiveStar on a phone, after asking for the best tacos within a 10 minute walk near South Congress in Austin: a map with numbered red pins, and a swipeable card for Torchy’s Tacos, a 7 minute walk, with a Navigate button."
+              alt="FiveStar on a phone, after asking for the best tacos within a 10 minute walk near South Congress in Austin: a map with numbered red pins, a swipeable card for Torchy’s Tacos, a 6 minute walk, with a Navigate button, and the answer below."
             />
           </div>
           <span className={`${styles.callout} ${styles.calloutPins}`} aria-hidden="true">
@@ -223,19 +214,20 @@ function PlanSection(): ReactNode {
             </div>
             <img
               src="/img/screens/desktop-plan-light.webp"
-              width={1600}
-              height={1000}
+              width={1388}
+              height={868}
               loading="lazy"
-              alt="FiveStar on a laptop, answering “Plan a Saturday in Austin with the kids”: the plan in the conversation on the left, starting at Zilker Park, and the map of Austin on the right with eleven numbered pins and a row of place cards."
+              alt="FiveStar on a laptop, answering “Plan a Saturday in Austin with the kids”: a Halloween Saturday in the conversation on the left, starting at the Texas Toy Museum, and the map of Austin on the right with ten numbered pins and a row of place cards."
             />
           </div>
           <figcaption className={styles.caption}>“Plan a Saturday in Austin with the kids,” answered live.</figcaption>
         </figure>
         <div className={styles.copy}>
-          <h2 className={styles.sectionTitle}>A whole Saturday, sorted</h2>
+          <h2 className={styles.sectionTitle}>A Saturday, or a whole vacation, sorted</h2>
           <p>
-            Ask for an afternoon, a day or a long weekend, and FiveStar lays it out in order, with the walk or the drive
-            between each stop. Change your mind and it changes the plan.
+            Ask for an afternoon, a long weekend or a full vacation of up to a month, and FiveStar plans it day by day:
+            where to base yourself, what to do each day and where to eat, with the walk or the drive between each stop.
+            The flights and hotels you’ve booked are already in it. Change your mind and it changes the plan.
           </p>
           <div className={styles.fly}>
             <svg className={styles.flyPath} viewBox="0 0 320 90" aria-hidden="true">
@@ -244,9 +236,12 @@ function PlanSection(): ReactNode {
               <circle cx="160" cy="45" r="9" fill="var(--golden)" />
               <circle cx="302" cy="22" r="9" fill="var(--coral)" />
               <g className={styles.flyStar}>
-                <path d="M0 -9 1.6 0 0 9 -1.6 0Z" fill="var(--coral)" />
-                <path d="M7.8 4.5 -0.8 1.4 -7.8 -4.5 0.8 -1.4Z" fill="var(--golden)" />
-                <path d="M7.8 -4.5 0.8 1.4 -7.8 4.5 -0.8 -1.4Z" fill="var(--indigo)" />
+                {/* The logo's star, about 9 across its points, centered on the path. */}
+                <g transform="scale(0.28) translate(-100 -83.16)">
+                  <path d={PATHS.star} fill="var(--ink)" />
+                  <path d={PATHS.needle[0]} fill={NEEDLE_COLORS[0]} />
+                  <path d={PATHS.needle[1]} fill={NEEDLE_COLORS[1]} />
+                </g>
               </g>
             </svg>
             <p>
@@ -276,16 +271,16 @@ function SunsetSection(): ReactNode {
           <img
             className={styles.pairDay}
             src="/img/screens/desktop-tacos-light.webp"
-            width={1600}
-            height={1000}
+            width={1388}
+            height={868}
             loading="lazy"
             alt="FiveStar in the light theme: the answer to “Best tacos within a 10 minute walk” beside a light map of South Congress with numbered pins."
           />
           <img
             className={styles.pairNight}
             src="/img/screens/desktop-tacos-dark.webp"
-            width={1600}
-            height={1000}
+            width={1388}
+            height={868}
             loading="lazy"
             alt="The same question in the dark theme, with a dark map."
           />
@@ -398,7 +393,7 @@ function Closing(): ReactNode {
   return (
     <section className={`${styles.section} ${styles.closing}`}>
       <div className="container">
-        <img className={styles.closingMark} src="/img/mark-on-dark.svg" alt="" width={64} height={64} />
+        <img className={styles.closingMark} src="/img/mark-on-dark.svg" alt="" width={49} height={64} />
         <h2>Where to next?</h2>
         <p>Ask FiveStar. It’s free, and it fits in your pocket.</p>
         <Link className={`button button--lg button--coral ${styles.primary}`} href={APP}>

@@ -69,9 +69,9 @@
 [data-theme='dark'] .primary { box-shadow: 4px 4px 0 var(--indigo); }
 [data-theme='dark'] .primary:hover { box-shadow: 6px 6px 0 var(--indigo); }
 .ctaStar { flex: none; transition: rotate 600ms cubic-bezier(0.3, 1.4, 0.5, 1); }
-/* The star on the button is midnight-on-coral friendly: its coral point gets a midnight edge. */
-.ctaStar path:first-child { stroke: var(--midnight); stroke-width: 0.8; }
-.primary:hover .ctaStar { rotate: 120deg; }
+/* The star on the button is midnight-on-coral friendly: its coral needle gets a midnight edge. */
+.ctaStar path { stroke: var(--midnight); stroke-width: 2.4; stroke-linejoin: round; }
+.primary:hover .ctaStar { rotate: 360deg; }
 .secondary { font-weight: 500; }
 .note { font-size: 0.95rem; color: var(--muted); margin: 0; }
 
@@ -273,9 +273,9 @@
 }
 .trick:nth-child(even) .trickMark { rotate: 5deg; }
 .trickStar { transition: rotate 700ms cubic-bezier(0.3, 1.4, 0.5, 1); }
-.trick:hover .trickStar { rotate: 180deg; }
-.trickStar path { fill: var(--midnight); }
-.indigo .trickStar path, .violet .trickStar path { fill: #ffffff; }
+.trick:hover .trickStar { rotate: 360deg; }
+.trickStar :global(.starBody) { fill: var(--midnight); }
+.indigo .trickStar :global(.starBody), .violet .trickStar :global(.starBody) { fill: #ffffff; }
 
 .coral { background: var(--coral); }
 .indigo { background: var(--indigo); }
