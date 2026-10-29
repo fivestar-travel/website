@@ -179,10 +179,10 @@ function MapSection(): ReactNode {
           <div className={styles.phone}>
             <img
               src="/img/screens/phone-tacos-light.webp"
-              width={780}
-              height={1688}
+              width={468}
+              height={1014}
               loading="lazy"
-              alt="FiveStar on a phone, after asking for the best tacos within a 10 minute walk near South Congress in Austin: a map with numbered red pins, and a swipeable card for Torchy’s Tacos, a 7 minute walk, with a Navigate button."
+              alt="FiveStar on a phone, after asking for the best tacos within a 10 minute walk near South Congress in Austin: a map with numbered red pins, a swipeable card for Torchy’s Tacos, a 6 minute walk, with a Navigate button, and the answer below."
             />
           </div>
           <span className={`${styles.callout} ${styles.calloutPins}`} aria-hidden="true">
@@ -214,10 +214,10 @@ function PlanSection(): ReactNode {
             </div>
             <img
               src="/img/screens/desktop-plan-light.webp"
-              width={1600}
-              height={1000}
+              width={1388}
+              height={868}
               loading="lazy"
-              alt="FiveStar on a laptop, answering “Plan a Saturday in Austin with the kids”: the plan in the conversation on the left, starting at Zilker Park, and the map of Austin on the right with eleven numbered pins and a row of place cards."
+              alt="FiveStar on a laptop, answering “Plan a Saturday in Austin with the kids”: a Halloween Saturday in the conversation on the left, starting at the Texas Toy Museum, and the map of Austin on the right with ten numbered pins and a row of place cards."
             />
           </div>
           <figcaption className={styles.caption}>“Plan a Saturday in Austin with the kids,” answered live.</figcaption>
@@ -271,16 +271,16 @@ function SunsetSection(): ReactNode {
           <img
             className={styles.pairDay}
             src="/img/screens/desktop-tacos-light.webp"
-            width={1600}
-            height={1000}
+            width={1388}
+            height={868}
             loading="lazy"
             alt="FiveStar in the light theme: the answer to “Best tacos within a 10 minute walk” beside a light map of South Congress with numbered pins."
           />
           <img
             className={styles.pairNight}
             src="/img/screens/desktop-tacos-dark.webp"
-            width={1600}
-            height={1000}
+            width={1388}
+            height={868}
             loading="lazy"
             alt="The same question in the dark theme, with a dark map."
           />
