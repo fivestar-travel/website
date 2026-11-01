@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 # Privacy Policy
 
-_Last updated October 28, 2026._
+_Last updated November 1, 2026._
 
 FiveStar is a personal AI travel concierge at [askfivestar.ai](https://askfivestar.ai). In this policy
 "FiveStar", "we" and "us" mean the people who run it. This policy covers the FiveStar app and this website,
@@ -40,10 +40,11 @@ If you have a question, write to [support@askfivestar.com](mailto:support@askfiv
 - **A random visitor id.** A cookie holds a random id that is not linked to your name or to any account. FiveStar
   may remember preferences you state in conversation (for example "we're vegetarian") under that id, so the next
   answer fits. It does **not** keep "interests" (what you have been looking at) for visitors who are not signed in.
-- **Your location, only if you allow it.** If you tap "Use my location", your browser shares its position. Our
-  server uses it to find the nearest point on the map's road or walking network, then drops the coordinates: they
-  are not logged, not stored and not put in memory, and the AI model is told a nearby point on the network or your
-  town, never your coordinates.
+- **Your location, only if you allow it.** When you open FiveStar, it asks your browser for your location, and the
+  first time your browser asks for your permission. Nothing is shared unless you allow it. Turn it off with "Use my
+  location" and FiveStar stops asking in that browser until you turn it back on. Our server uses the position to find
+  the nearest point on the map's road or walking network, then drops the coordinates: they are not logged, not stored
+  and not put in memory, and the AI model is told a nearby point on the network or your town, never your coordinates.
 - **Addresses you type.** Suggestions come from our own map data. What you type is sent in the body of the request,
   not the address bar, and is not logged.
 - **Your voice, only if you use the microphone.** Audio is sent to Google Cloud Speech-to-Text to turn it into text,
