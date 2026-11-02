@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 # Privacy Policy
 
-_Last updated November 1, 2026._
+_Last updated November 2, 2026._
 
 FiveStar is a personal AI travel concierge at [askfivestar.ai](https://askfivestar.ai). In this policy
 "FiveStar", "we" and "us" mean the people who run it. This policy covers the FiveStar app and this website,
@@ -85,6 +85,13 @@ Once you are signed in, FiveStar can keep the following for you:
   content, and read by the AI model to confirm that it is a menu and to note its dishes and prices so FiveStar can
   answer questions about them. We keep a record that you added it as a keyed code, not your name. You can remove your
   photo at any time, which deletes it.
+- **Points.** When a contribution counts (a check-in, a review, a place you add that other travelers confirm, a menu
+  photo, a report or a correction that is upheld), FiveStar records what kind it was, the points, the place, when,
+  and whether it is still waiting on a decision. Your total gives your rank (such as "Scout" or "Explorer"). Your
+  points and their history are shown only to you, under **Your points**.
+- **The town board, only if you join it.** If you choose **Join the board**, FiveStar keeps that choice with the name
+  and picture your sign-in gives, so it can list you among the week's top contributors around a town. Leave it at any
+  time and you are taken off.
 
 ### When you connect email or a calendar
 
@@ -95,6 +102,14 @@ This is optional and described in full in [Email and calendar access](#email-and
 askfivestar.com is a static site. It sets no cookies of its own and runs no analytics. Our hosting provider
 (GitHub Pages) processes standard request data, such as your IP address, to serve and protect the site. A light or
 dark theme choice may be saved in your browser.
+
+### Usage counts
+
+To run FiveStar we count how it is used: how many people sign in and with which provider, how many visit, and how
+many questions are asked each day. Each person is counted under a keyed code made from their FiveStar id, which
+cannot be turned back into the id or joined to anyone's memory, trips, check-ins or connections. Nothing else is
+counted: no question, answer, place, email, calendar event or position. The counts are read only by the FiveStar team
+and are not shared. No data from Gmail, Google Calendar or Outlook is used in them.
 
 ## Email and calendar access
 
@@ -244,6 +259,10 @@ disconnect it at any time.
   takes your name off them; the place stays, shown as added by "a traveler", because others' maps depend on it.
 - **Menu photos** are public: anyone can see the photo, the date it was added, and whether it came from the
   restaurant or from a traveler. Your name is never shown with a menu photo.
+- **Your rank** (such as "Explorer") is shown beside your name only where your name is already public: on your
+  reviews and on places you added. Your points, and what earned them, are not public.
+- **The town board** is opt-in. If you join it, it shows your name, picture, rank and the points you earned that week
+  around a town to anyone who opens the board there. It never shows where you went, when, or what you checked in at.
 
 ## Where your data is kept
 
@@ -294,6 +313,10 @@ FiveStar (askfivestar.ai) uses only what it needs to work. There are no advertis
   me" erases it; if the cookie is cleared or expires, it can no longer be linked to you.
 - **Places you added or corrected** stay as part of the place's history after you delete your check-ins or your
   account, with your name removed.
+- **Points** are kept until you forget everything or ask us to delete your account. Leaving the town board takes you
+  off it at once.
+- **Usage counts** are kept under the keyed code described in [Usage counts](#usage-counts), which cannot be linked
+  back to you.
 - **Operational logs** (such as errors and request records with IP addresses) are kept for up to 30 days for
   security and troubleshooting. FiveStar does not log the content of your messages, your emails or your location.
 
@@ -303,7 +326,8 @@ In the app, at any time:
 
 - See and remove anything FiveStar remembers (**What FiveStar remembers**), or tap **Forget everything about me** to
   erase your memory, interests, preferences, trips and email-reading progress, disconnect every email and calendar
-  connection, and remove your forwarding address, calendar link and trips feed.
+  connection, remove your forwarding address, calendar link and trips feed, and erase your points and take you off
+  the town board.
 - See and delete your check-ins (**Your check-ins** in your account), one at a time or all at once.
 - Edit or delete your reviews.
 - Disconnect any email or calendar connection.
