@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 # Terms of Service
 
-_Last updated October 28, 2026._
+_Last updated November 1, 2026._
 
 These terms are an agreement between you and FiveStar ("FiveStar", "we", "us"), which runs FiveStar at
 [askfivestar.ai](https://askfivestar.ai) and this website. By using FiveStar you agree to them. If you do not
@@ -32,13 +32,17 @@ others at risk.
 
 ## Your content
 
-You keep ownership of what you put into FiveStar: your messages, reviews, check-ins, places you add and
-corrections. You give us a worldwide, non-exclusive, royalty-free license to host, store, process, display and
+You keep ownership of what you put into FiveStar: your messages, reviews, check-ins, places you add,
+corrections and menu photos. You give us a worldwide, non-exclusive, royalty-free license to host, store, process, display and
 adapt that content as needed to run, improve and protect FiveStar, and, for content that is public by its nature
-(reviews, and places and corrections once they are confirmed), to show it to other people. For places and
+(reviews, menu photos, and places and corrections), to show it to other people. For places and
 corrections this license continues after you delete your account, without your name, because other travelers'
 maps depend on them. How we handle your personal information is described in the
 [Privacy Policy](/privacy).
+
+Add only menu photos you took yourself, or that you have the right to share, of the menu of the place you add them
+to. Not photos of people, receipts, or anything else, and nothing explicit, hateful or misleading. FiveStar checks
+photos before they are shown, may hide or remove any photo, and travelers can report one.
 
 ## Reviews and check-ins must be genuine
 

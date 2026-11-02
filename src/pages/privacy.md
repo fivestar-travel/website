@@ -79,6 +79,12 @@ Once you are signed in, FiveStar can keep the following for you:
   history so other travelers can confirm it.
 - **Reviews.** Your star rating, your text (optional), your name and picture as they were when you wrote it, and
   whether you had checked in at that place.
+- **Menu photos you add.** The photo, in two sizes, and the place it is for. Before anything leaves your device,
+  FiveStar re-draws the photo, which drops what your camera wrote into it (where and when it was taken, the phone).
+  Our server removes any such data again. Each photo is checked by Google Cloud Vision for explicit or violent
+  content, and read by the AI model to confirm that it is a menu and to note its dishes and prices so FiveStar can
+  answer questions about them. We keep a record that you added it as a keyed code, not your name. You can remove your
+  photo at any time, which deletes it.
 
 ### When you connect email or a calendar
 
@@ -233,7 +239,11 @@ disconnect it at any time.
 - **Check-ins are never shown to anyone else.** Where FiveStar shows activity at a place drawn from check-ins (such
   as how many travelers have been there, or how popular it is), it is an aggregate across at least five different
   travelers. Nothing FiveStar shows reveals who is at a place right now, or anyone's times or trail.
-- **Places you add** become visible to others once enough independent travelers confirm them, without your name.
+- **Places you add** are public right away, marked "New · added by" with the name (and, where your sign-in gives
+  one, the picture) your sign-in provides, and how many travelers have confirmed them. Deleting your contributions
+  takes your name off them; the place stays, shown as added by "a traveler", because others' maps depend on it.
+- **Menu photos** are public: anyone can see the photo, the date it was added, and whether it came from the
+  restaurant or from a traveler. Your name is never shown with a menu photo.
 
 ## Where your data is kept
 
