@@ -52,6 +52,10 @@ If you have a question, write to [support@askfivestar.ai](mailto:support@askfive
   and not put in memory, and the AI model is told a nearby point on the network or your town, never your coordinates.
 - **Addresses you type.** Suggestions come from our own map data. What you type is sent in the body of the request,
   not the address bar, and is not logged.
+- **Opening a trip in Google Maps or Apple Maps.** If FiveStar can't time a trip, it offers "Open in Google Maps" and
+  "Open in Apple Maps". Nothing is sent until you tap one. When you do, your browser opens that app with the start and
+  end points of the trip in the link, so Google or Apple receives them under its own privacy policy. FiveStar does
+  not tell either company who you are.
 - **Your voice, only if you use the microphone.** Audio is sent to Google Cloud Speech-to-Text to turn it into text,
   and FiveStar's spoken replies are made with Google Cloud Text-to-Speech. We do not store the audio.
 
