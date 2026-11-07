@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 # Delete your data
 
-_Last updated October 28, 2026._
+_Last updated November 7, 2026._
 
 You can delete what FiveStar knows about you yourself, in the app, at any time. If you would rather we do it, or you
 want your whole account deleted, email us (see [Ask us to delete everything](#ask-us-to-delete-everything)).
@@ -19,7 +19,10 @@ want your whole account deleted, email us (see [Ask us to delete everything](#as
 3. Tap **Forget everything about me** at the bottom of the panel.
 
 This erases your memory, interests, preferences and trips, and the progress of any email reading. It also
-disconnects Gmail and revokes FiveStar's access at Google. The conversation on the page is cleared too.
+disconnects Gmail and revokes FiveStar's access at Google. If you are signed in, it also removes your friendships and
+any invitations or requests not yet used, your memory books, your profile photo and the email address FiveStar keeps
+for notices. It stops sharing the trips you shared and takes you off every trip shared with you. Everyone else on
+those trips keeps their own copy, without your bookings. The conversation on the page is cleared too.
 
 To remove a single memory instead, tap the remove button next to it in the same panel. To delete a single trip,
 open **Your trips**.
@@ -70,6 +73,8 @@ want linked.
 
 Email [support@askfivestar.ai](mailto:support@askfivestar.ai) from the email address on your FiveStar account (or tell us
 which sign-in you use), with the subject "Delete my FiveStar data". We will delete your account and everything
-linked to it: memory, interests, preferences, trips, check-ins, reviews, linked sign-ins and connections, and revoke
-any email or calendar access. Places you added or corrected stay, without your name. We confirm by email when it is
+linked to it: memory, interests, preferences, trips, check-ins, reviews, friendships, trip photos, your profile photo,
+the email address kept for notices, linked sign-ins and connections, and revoke
+any email or calendar access. Places you added or corrected stay, without your name. Copies of trips you shared stay
+with the people on them, without your bookings. We confirm by email when it is
 done, within 30 days.

@@ -27,7 +27,12 @@ If you have a question, write to [support@askfivestar.ai](mailto:support@askfive
   advertising, never sold, and never used to train general AI models.
 - Connecting an AI app (such as Claude or ChatGPT) to FiveStar is optional too. You choose what it can see, it never
   sees your messages, events or booking numbers, and you can disconnect it at any time.
-- Your check-ins are private to you. Your reviews are public, with your name, because that is what a review is.
+- Your check-ins are never public. Your FiveStar friends see the places you check in to, and you can hide yours from
+  any friend, or all of them, in one tap. Your reviews are public, with your name, because that is what a review is.
+- Sharing a trip with someone is your choice. Everyone on a shared trip keeps their own copy, but nobody sees anyone
+  else's booking or confirmation numbers.
+- FiveStar emails you only at an address that is verified, and only when someone asks to be your friend or shares a
+  trip with you. It sends no newsletters or offers.
 - We do not sell your data, show ads, or use third-party analytics or advertising trackers.
 
 ## What we collect, and why
@@ -56,7 +61,8 @@ FiveStar offers sign-in with Google, and where offered, Microsoft, Amazon, X and
 receive your account's user id, name, and where the provider shares them, your email address and profile picture.
 We ask for nothing more at sign-in (scopes `openid`, `email`, `profile` or the provider's equivalent). Your FiveStar
 traveler id is a one-way hash of the provider and that user id. Your email address is a label in your account
-panel; it is never used to merge accounts. You can link more than one sign-in to the same traveler, and remove a
+panel; it is never used to merge accounts. It is kept for email notices only when it is verified (see
+[Email from FiveStar](#email-from-fivestar)). You can link more than one sign-in to the same traveler, and remove a
 link, in your account.
 
 Once you are signed in, FiveStar can keep the following for you:
@@ -74,7 +80,8 @@ Once you are signed in, FiveStar can keep the following for you:
 - **Check-ins.** When you tap "I'm here", FiveStar records the place, the time, and the position your device reported
   (with its accuracy) when you tapped. To catch faked check-ins it also stores a keyed one-way hash of a random
   device id kept in a cookie, and a keyed one-way hash of your IP address's network. These hashes cannot be turned
-  back into the id or the address. Your check-ins are private to you (see [What is public](#what-is-public)).
+  back into the id or the address. Your check-ins are never public. Your friends see the places you check in to,
+  unless you hide yours from them (see [Friends and shared trips](#friends-and-shared-trips)).
 - **Places you add or correct.** A new place, or a fix to a place's details, is kept as part of that place's
   history so other travelers can confirm it.
 - **Reviews.** Your star rating, your text (optional), your name and picture as they were when you wrote it, and
@@ -98,6 +105,20 @@ Once you are signed in, FiveStar can keep the following for you:
 - **The town board, only if you join it.** If you choose **Join the board**, FiveStar keeps that choice with the name
   and picture your sign-in gives, so it can list you among the week's top contributors around a town. Leave it at any
   time and you are taken off.
+- **Trip photos (your memory book).** Photos you add to a trip's memory book, in two sizes, with a caption if you write
+  one and the audience you choose for each photo. Before anything leaves your device, FiveStar re-draws the photo,
+  which drops what your camera wrote into it. It sends only the time and place the photo was taken, so it can file the
+  photo under the right day and stop. Our server removes any camera data again. That time and place are shown to you
+  alone; anyone else you share the photo with sees only its day and the name of its stop. Each photo is checked by
+  Google Cloud Vision for explicit or violent content, and one that does not pass is kept for you alone.
+- **Friends.** Who your FiveStar friends are, the name and picture each of you uses on FiveStar, when you became
+  friends, and whether you share your check-ins with each one. FiveStar also keeps friend requests and invitation links
+  you send until they are used, declined or expire.
+- **Shared trips.** For a trip you share, or that is shared with you: who is on it, what each person may do (change
+  it, or only view it), who changed it last, and the latest version of the trip. Each person's bookings stay marked
+  as theirs.
+- **Your email address for notices.** Only a verified address, with your choice of which notices you want. See
+  [Email from FiveStar](#email-from-fivestar).
 
 ### When you connect email or a calendar
 
@@ -244,12 +265,81 @@ disconnect it at any time.
   see it in the app; and saving new preferences you tell it.
 - **What it never gets.** Your emails or calendar events (their content, subjects, senders or attachments), booking
   and confirmation numbers, your check-ins, review text, your connected accounts, your forwarding address or
-  calendar links, or anyone else's data. It cannot check in or write a review.
+  calendar links, your friends, or anyone else's data. A trip shared with you appears to it as you see it in
+  FiveStar, without anyone else's bookings. It cannot check in or write a review.
 - **What the app does with it.** What you share with an AI app is then handled under that app's own terms and privacy
   policy, which you agreed to with its maker. FiveStar does not sell this data, use it for advertising, or use it to
   train AI models.
 - **Stopping.** Disconnect any app at any time in FiveStar (Connected apps), which ends its access at once. "Forget
   everything about me" disconnects every app.
+
+## Friends and shared trips
+
+Friends and shared trips are for signed-in travelers only, and nothing is shared with anyone until you, or someone
+you know, starts it.
+
+### Friends
+
+- **Becoming friends.** You become friends with someone when one of you accepts the other's invitation link or friend
+  request. Friends are always mutual: nobody can follow you. A request can be declined, and the person who sent it is
+  not told.
+- **What a friend sees.** Your name and picture, and the places you check in to, such as "Ana checked in here".
+  Unless you turn on check-ins as they happen (below), friends never see when you checked in, and never your
+  device's position. A new
+  friendship shares check-ins both ways. You can hide yours from any friend, or from all of them, at any time in
+  **Friends**, and share again later. Hiding takes effect at once.
+- **Check-ins as they happen.** If you turn on **Let friends see my check-ins as they happen** (it is off unless you
+  turn it on), the friends you share with also see a check-in shortly after you make it: the place and how long ago,
+  for up to three hours. This lets them know roughly where you have been in the last few hours, so it is your choice.
+  They never see your device's position. Turn it off at any time.
+- **Trip photos.** A friend sees the memory book photos you set to **Friends** or **Public**, and only those.
+- **Finding people by name.** Signed-in travelers can search for you by the name you use on FiveStar, so they can send
+  you a friend request. The search shows your name and rank, and never your email address or anything else. Turn off
+  **Let people find me by name** in **Friends** and you are taken out of everyone's search. Someone who already has
+  your invitation link, or a trip you shared with them, can still reach you.
+- **Removing a friend** removes the friendship for both of you at once.
+
+### Sharing a trip
+
+- **Who you share with.** You can share a trip with friends, or send a one-time link that works for one person within
+  14 days. For each person, you choose whether they can change the trip or only view it. You can change that, remove
+  someone, or stop sharing at any time. Someone a trip is shared with can leave it.
+- **What everyone on the trip sees.** The trip as it is now (places, days, times, notes, the hotel, who is going), who
+  else is on it by the name and picture they use on FiveStar, and who changed it last. Anyone who opens a trip link
+  sees whose trip it is, where and when, before they choose to join.
+- **Bookings stay yours.** A booking (such as a flight or hotel confirmation that FiveStar found in your email)
+  belongs to whoever it came from. Nobody else on the trip sees your bookings or confirmation numbers, and you never
+  see theirs. FiveStar reads each person's email only into trips that person owns.
+- **Everyone keeps their own copy.** Each person on a shared trip has the trip in their own FiveStar memory, so it
+  stays part of their travel history. If you stop sharing, remove someone, or someone leaves, each of them keeps their
+  copy as it was then, marked as shared by you, and it no longer changes. If you delete a trip you shared, the others
+  keep their copies unless they delete them. Their copy never includes your bookings.
+- **The trip's album.** On a shared trip, you can set a memory book photo to **Everyone on this trip**. Everyone
+  currently on the trip then sees it in the trip's album, with your name and picture, its day and the name of its
+  stop. The photo stays in your book, and only you can change or remove it. When someone leaves or is removed, or the
+  trip stops being shared, the album is closed to them at once. Their own photos stay in their own books.
+
+## Email from FiveStar
+
+FiveStar sends you two kinds of email, and nothing else: one when someone asks to be your friend, and one when a
+friend shares a trip with you. The email says who it is from, and for a trip, the city and the dates. Each email has
+one button and contains no tracking pixels or remote images. We send no newsletters, offers or advertising.
+
+- **Only to a verified address.** FiveStar emails you only at an address that is verified in one of two ways. Either
+  your sign-in provider says it is verified (Google, or Apple when you share your real address rather than a private
+  relay), or you confirmed it yourself in **Settings**, under **Profile & sign-in**, by opening a one-time link
+  FiveStar emailed to that address. An address waiting for confirmation gets nothing but that one link, and it is kept
+  for at most 24 hours.
+- **Who sees your address.** Only you, in **Settings**. It is never shown to another traveler, never included in a
+  notice sent to anyone else, never written to our logs, and it cannot be used to look you up.
+- **Limits.** FiveStar limits how many notices anyone can cause or receive in a day. To do that, it keeps short-lived
+  records made of keyed one-way codes and times, never addresses or names.
+- **Replies** go to the FiveStar team, not to the person named in the email.
+- **Stopping.** Turn either kind of notice off in **Settings**, or use the unsubscribe link at the bottom of any
+  notice (or your mail app's Unsubscribe button), which works without signing in. "Forget everything about me"
+  deletes your address and your choices.
+- **Who delivers it.** We send these emails through Amazon Web Services (Amazon SES), with Resend as a fallback. Each
+  receives only your address and the email itself, to deliver it.
 
 ## What is public
 
@@ -258,9 +348,12 @@ disconnect it at any time.
   Google and X, and for other sign-ins your initials). Your profile photo shows wherever your name does.
   The form says "Posting publicly as" your name before you post. A place's average rating and review count are
   public too.
-- **Check-ins are never shown to anyone else.** Where FiveStar shows activity at a place drawn from check-ins (such
-  as how many travelers have been there, or how popular it is), it is an aggregate across at least five different
-  travelers. Nothing FiveStar shows reveals who is at a place right now, or anyone's times or trail.
+- **Check-ins are never public.** Only your friends see them, as described in
+  [Friends and shared trips](#friends-and-shared-trips). Where FiveStar shows activity at a place drawn from check-ins
+  (such as how many travelers have been there, or how popular it is), it is an aggregate across at least five different
+  travelers. Nothing public reveals who is at a place right now, or anyone's times or trail.
+- **Trip photos** are seen only by the audience you choose for each one: only you, everyone on a shared trip, your
+  friends, or the public. Nobody but you sees exactly when or where one was taken.
 - **Places you add** are public right away, marked "New · added by" with the name (and, where your sign-in gives
   one, the picture) your sign-in provides, and how many travelers have confirmed them. Deleting your contributions
   takes your name off them; the place stays, shown as added by "a traveler", because others' maps depend on it.
@@ -287,6 +380,9 @@ We use these service providers, each only to run FiveStar:
 
 - **Google Cloud**: hosting, storage, AI models (Vertex AI), speech-to-text and text-to-speech.
 - **Cloudflare**: DNS, and routing mail sent to your forwarding address.
+- **Amazon Web Services** (Amazon SES) and **Resend**: delivering FiveStar's email notices and confirmation links.
+  Each receives only the recipient's address and the email.
+- **Google Workspace**: the FiveStar team's own mailboxes, which receive replies to our emails and mail to support.
 - **GitHub** (GitHub Pages): hosting this website, askfivestar.com. It does not host the app.
 - **Your sign-in provider** (Google, Microsoft, Amazon, X or Facebook): to sign you in, and for Google and
   Microsoft, the email and calendar access you choose to give.
@@ -318,6 +414,15 @@ FiveStar (askfivestar.ai) uses only what it needs to work. There are no advertis
   looking for them.
 - **Visitors who are not signed in**: what FiveStar remembers is tied to the visitor cookie. "Forget everything about
   me" erases it; if the cookie is cleared or expires, it can no longer be linked to you.
+- **Friendships** are kept until either of you removes the friendship. **Invitation links** expire after 14 days and
+  **friend requests** after 30, unless they are used or declined first.
+- **Shared trips** are kept until the owner stops sharing or deletes the trip. Each person's own copy is kept until
+  they delete it or forget everything, including after sharing stops (see [Sharing a trip](#sharing-a-trip)).
+  **Trip links** expire after 14 days, or once they are used.
+- **Trip photos** are kept until you remove them, delete the trip, or forget everything.
+- **Your email address for notices** is kept until you change it or forget everything. An address waiting for
+  confirmation is deleted after 24 hours. The records that limit how many notices are sent hold only keyed codes and
+  times, and each one is reused after 24 hours.
 - **Places you added or corrected** stay as part of the place's history after you delete your check-ins or your
   account, with your name removed.
 - **Points** are kept until you forget everything or ask us to delete your account. Leaving the town board takes you
@@ -333,10 +438,18 @@ In the app, at any time:
 
 - See and remove anything FiveStar remembers (**What FiveStar remembers**), or tap **Forget everything about me** to
   erase your memory, interests, preferences, trips and email-reading progress, disconnect every email and calendar
-  connection, remove your forwarding address, calendar link and trips feed, and erase your points and take you off
-  the town board.
+  connection, remove your forwarding address, calendar link and trips feed, erase your points and take you off
+  the town board, remove every friendship and every invitation or request not yet used, delete your memory books, your
+  profile photo, and the email address FiveStar keeps for notices, stop sharing the trips you shared and take you off
+  every trip shared with you. Others on those trips keep their own copies, as described in
+  [Sharing a trip](#sharing-a-trip).
 - See and delete your check-ins (**Your check-ins** in your account), one at a time or all at once.
 - Edit or delete your reviews.
+- In **Friends**, hide your check-ins from any friend or all of them, turn check-ins as they happen on or off, stop
+  people finding you by name, or remove a friend.
+- Stop sharing a trip, change or remove who is on it, or leave a trip shared with you.
+- Remove a trip photo or change who can see it.
+- Turn email notices off in **Settings**, or with the unsubscribe link in any notice.
 - Disconnect any email or calendar connection.
 - Remove a linked sign-in.
 
