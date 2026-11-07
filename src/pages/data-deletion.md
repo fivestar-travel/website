@@ -20,7 +20,7 @@ want your whole account deleted, email us (see [Ask us to delete everything](#as
 
 This erases your memory, interests, preferences and trips, and the progress of any email reading. It also
 disconnects Gmail and revokes FiveStar's access at Google. If you are signed in, it also removes your friendships and
-any invitations or requests not yet used, your memory books, your profile photo and the email address FiveStar keeps
+any invitations or requests not yet used, every conversation link you shared, your memory books, your profile photo and the email address FiveStar keeps
 for notices. It stops sharing the trips you shared and takes you off every trip shared with you. Everyone else on
 those trips keeps their own copy, without your bookings. The conversation on the page is cleared too.
 
