@@ -14,7 +14,7 @@ FiveStar is a personal AI travel concierge at [askfivestar.ai](https://askfivest
 askfivestar.com. It says what we collect, why, where it is kept, for how long, who else touches it, and how you
 delete it.
 
-If you have a question, write to [support@askfivestar.com](mailto:support@askfivestar.com).
+If you have a question, write to [support@askfivestar.ai](mailto:support@askfivestar.ai).
 
 ## The short version
 
@@ -334,7 +334,7 @@ In the app, at any time:
 - Remove a linked sign-in.
 
 The step-by-step guide is at [Delete your data](/data-deletion). To delete your whole account, or to ask for a copy
-of your data or a correction, email [support@askfivestar.com](mailto:support@askfivestar.com) from the address on your
+of your data or a correction, email [support@askfivestar.ai](mailto:support@askfivestar.ai) from the address on your
 account. We answer within 30 days. Depending on where you live (for example the EU, the UK or California) you may
 have further rights, including to object to or restrict processing and to complain to your data protection
 authority. We will not treat you differently for using them.
@@ -361,4 +361,4 @@ they take effect. The previous versions are kept in our records.
 
 ## Contact
 
-Email [support@askfivestar.com](mailto:support@askfivestar.com).
+Email [support@askfivestar.ai](mailto:support@askfivestar.ai).

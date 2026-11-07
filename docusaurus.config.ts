@@ -46,7 +46,7 @@ const config: Config = {
         operatingSystem: 'Web',
         description: DESCRIPTION,
         url: APP,
-        publisher: {'@type': 'Organization', name: 'FiveStar', email: 'support@askfivestar.com'},
+        publisher: {'@type': 'Organization', name: 'FiveStar', email: 'support@askfivestar.ai'},
       }),
     },
   ],
@@ -114,7 +114,7 @@ const config: Config = {
         },
         {
           title: 'Contact',
-          items: [{label: 'support@askfivestar.com', href: 'mailto:support@askfivestar.com'}],
+          items: [{label: 'support@askfivestar.ai', href: 'mailto:support@askfivestar.ai'}],
         },
       ],
       copyright: `© ${new Date().getFullYear()} FiveStar. Made for wandering, snacking and getting a little lost on purpose.`,

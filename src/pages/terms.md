@@ -67,7 +67,7 @@ FiveStar, the offer is made by that venue, not by FiveStar. The venue is respons
 honoring it, and for the goods and services it provides. Offers in FiveStar are always labeled as offers and never
 buy a place's ranking, reviews or check-ins. We are not responsible for a venue's products, services, conduct or
 failure to honor an offer, though we want to hear about it at
-[support@askfivestar.com](mailto:support@askfivestar.com).
+[support@askfivestar.ai](mailto:support@askfivestar.ai).
 
 ## Connected accounts
 
@@ -129,4 +129,4 @@ they take effect. If you keep using FiveStar after that, the new terms apply.
 
 ## Contact
 
-Questions about these terms: [support@askfivestar.com](mailto:support@askfivestar.com).
+Questions about these terms: [support@askfivestar.ai](mailto:support@askfivestar.ai).

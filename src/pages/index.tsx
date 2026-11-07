@@ -402,7 +402,7 @@ function Closing(): ReactNode {
         </Link>
         <p className={styles.madeBy}>
           Questions, ideas, a great taco spot we missed?{' '}
-          <Link href="mailto:support@askfivestar.com">support@askfivestar.com</Link>
+          <Link href="mailto:support@askfivestar.ai">support@askfivestar.ai</Link>
         </p>
       </div>
     </section>

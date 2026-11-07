@@ -411,7 +411,7 @@ function Builders(): ReactNode {
         </ul>
         <p className={styles.small}>
           Building something, or hit a snag? Write to{' '}
-          <Link href="mailto:support@askfivestar.com">support@askfivestar.com</Link>. How connected apps use your data is
+          <Link href="mailto:support@askfivestar.ai">support@askfivestar.ai</Link>. How connected apps use your data is
           in our <Link to="/privacy#connected-ai-apps">Privacy Policy</Link>.
         </p>
       </div>
