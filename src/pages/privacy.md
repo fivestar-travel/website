@@ -319,6 +319,31 @@ you know, starts it.
   stop. The photo stays in your book, and only you can change or remove it. When someone leaves or is removed, or the
   trip stops being shared, the album is closed to them at once. Their own photos stay in their own books.
 
+## Sharing a conversation
+
+You can turn a conversation with FiveStar into a link, instead of a screenshot, with **Share**. Anyone with the link
+can read the conversation and see its places on a map, and can carry it on as their own conversation. It is your
+choice, it works whether or not you are signed in, and nothing is published until you choose **Create public link**.
+
+- **You see it first.** Before the link is made, FiveStar shows you every word the link will show, and you can take
+  out any question together with its answer.
+- **What a link never holds.** Where you are or were (no position, no route from where you stood, no walking or
+  driving times or distances), routes to an address, your name or email address, booking and confirmation numbers,
+  phone numbers, email addresses, coordinates, or your home address. FiveStar's AI model also rewrites each question
+  and answer to leave out personal details such as names, ages, health, allergies and diets, relationships, and your
+  own travel dates. If that check cannot run, no link is made. Your memory, check-ins and email are never part of a
+  link.
+- **Who it says shared it.** Nobody: the link and its preview image do not name you. We keep a keyed one-way code of
+  your FiveStar id with the link so you can list and delete your own links.
+- **Unlisted.** A link is not listed or searchable anywhere in FiveStar, and it asks search engines not to index it.
+  But anyone you give it to can pass it on, and apps that show link previews (such as Messages, Facebook or X) show its
+  first question and the places it names.
+- **Someone who continues it** starts their own conversation from it. Their new questions use their own location and
+  memory, never yours, and your questions never become part of their memory.
+- **Deleting.** Links do not expire. Delete any of them in **Settings** (or **Delete this link** on the link itself),
+  and it stops working at once. "Forget everything about me" deletes all of them. If you were not signed in, your links
+  belong to that browser's visitor cookie.
+
 ## Email from FiveStar
 
 FiveStar sends you two kinds of email, and nothing else: one when someone asks to be your friend, and one when a
@@ -352,6 +377,8 @@ one button and contains no tracking pixels or remote images. We send no newslett
   [Friends and shared trips](#friends-and-shared-trips). Where FiveStar shows activity at a place drawn from check-ins
   (such as how many travelers have been there, or how popular it is), it is an aggregate across at least five different
   travelers. Nothing public reveals who is at a place right now, or anyone's times or trail.
+- **Shared conversations** can be read by anyone who has the link, as described in
+  [Sharing a conversation](#sharing-a-conversation).
 - **Trip photos** are seen only by the audience you choose for each one: only you, everyone on a shared trip, your
   friends, or the public. Nobody but you sees exactly when or where one was taken.
 - **Places you add** are public right away, marked "New · added by" with the name (and, where your sign-in gives
@@ -420,6 +447,7 @@ FiveStar (askfivestar.ai) uses only what it needs to work. There are no advertis
   they delete it or forget everything, including after sharing stops (see [Sharing a trip](#sharing-a-trip)).
   **Trip links** expire after 14 days, or once they are used.
 - **Trip photos** are kept until you remove them, delete the trip, or forget everything.
+- **Shared conversation links** are kept until you delete them or forget everything. They do not expire.
 - **Your email address for notices** is kept until you change it or forget everything. An address waiting for
   confirmation is deleted after 24 hours. The records that limit how many notices are sent hold only keyed codes and
   times, and each one is reused after 24 hours.
@@ -439,7 +467,7 @@ In the app, at any time:
 - See and remove anything FiveStar remembers (**What FiveStar remembers**), or tap **Forget everything about me** to
   erase your memory, interests, preferences, trips and email-reading progress, disconnect every email and calendar
   connection, remove your forwarding address, calendar link and trips feed, erase your points and take you off
-  the town board, remove every friendship and every invitation or request not yet used, delete your memory books, your
+  the town board, delete every conversation link you shared, remove every friendship and every invitation or request not yet used, delete your memory books, your
   profile photo, and the email address FiveStar keeps for notices, stop sharing the trips you shared and take you off
   every trip shared with you. Others on those trips keep their own copies, as described in
   [Sharing a trip](#sharing-a-trip).
@@ -450,6 +478,7 @@ In the app, at any time:
 - Stop sharing a trip, change or remove who is on it, or leave a trip shared with you.
 - Remove a trip photo or change who can see it.
 - Turn email notices off in **Settings**, or with the unsubscribe link in any notice.
+- Delete any conversation link you shared, in **Settings**.
 - Disconnect any email or calendar connection.
 - Remove a linked sign-in.
 
