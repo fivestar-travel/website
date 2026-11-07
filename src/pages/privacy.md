@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 # Privacy Policy
 
-_Last updated November 2, 2026._
+_Last updated November 7, 2026._
 
 FiveStar is a personal AI travel concierge at [askfivestar.ai](https://askfivestar.ai). In this policy
 "FiveStar", "we" and "us" mean the people who run it. This policy covers the FiveStar app and this website,
@@ -85,6 +85,12 @@ Once you are signed in, FiveStar can keep the following for you:
   content, and read by the AI model to confirm that it is a menu and to note its dishes and prices so FiveStar can
   answer questions about them. We keep a record that you added it as a keyed code, not your name. You can remove your
   photo at any time, which deletes it.
+- **A profile photo, only if you choose one.** In Settings you can choose your own photo to show instead of the
+  picture your sign-in gives (or your initials). It is cropped square and re-drawn on your device, which drops what
+  your camera wrote into it (where and when it was taken, the phone), and our server removes any such data again. It
+  is checked by Google Cloud Vision for explicit or violent content, and one that does not pass is not kept. We keep
+  the photo and a record of whose it is until you remove it or replace it (either deletes the old one at once), or
+  until you choose "Forget everything about me".
 - **Points.** When a contribution counts (a check-in, a review, a place you add that other travelers confirm, a menu
   photo, a report or a correction that is upheld), FiveStar records what kind it was, the points, the place, when,
   and whether it is still waiting on a decision. Your total gives your rank (such as "Scout" or "Explorer"). Your
@@ -248,7 +254,8 @@ disconnect it at any time.
 ## What is public
 
 - **Reviews** are public, like reviews on a map: anyone, signed in or not, can read your rating, your review text,
-  your name and your picture (FiveStar shows pictures from Google and X; for other sign-ins it shows your initials).
+  your name and your picture (the profile photo you chose, if you chose one; otherwise FiveStar shows pictures from
+  Google and X, and for other sign-ins your initials). Your profile photo shows wherever your name does.
   The form says "Posting publicly as" your name before you post. A place's average rating and review count are
   public too.
 - **Check-ins are never shown to anyone else.** Where FiveStar shows activity at a place drawn from check-ins (such
