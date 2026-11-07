@@ -120,6 +120,13 @@ Once you are signed in, FiveStar can keep the following for you:
 - **Your email address for notices.** Only a verified address, with your choice of which notices you want. See
   [Email from FiveStar](#email-from-fivestar).
 
+### When you attach a picture in the chat
+
+When you attach a screenshot or photo in the chat, it is sent to the AI model that powers FiveStar so it can read it
+for that conversation, and it is not kept. Location and camera details are removed from it on your device before it is
+sent. What you ask FiveStar to do with it, such as adding a cruise's days to your trip, is saved to your trips like
+anything else you tell FiveStar. Attaching pictures is only for signed-in travelers.
+
 ### When you connect email or a calendar
 
 This is optional and described in full in [Email and calendar access](#email-and-calendar-access).
@@ -175,7 +182,7 @@ FiveStar requests these Google scopes:
 
 - `openid`, `email`, `profile`: to sign you in (your Google account id, name, email address and picture).
 - `https://www.googleapis.com/auth/gmail.readonly`: only if you choose **Connect Gmail**. FiveStar uses it to search
-  your mailbox for travel booking emails (confirmations and itineraries from airlines, hotels, booking sites and
+  your mailbox for travel booking emails (confirmations and itineraries from airlines, hotels, cruise lines, theme-park resorts, booking sites and
   reservation services, leaving out Promotions, Social, Spam and Trash), and to read those messages and their PDF
   attachments. The text is extracted in our search engine without being stored, and our AI model reads it to find
   your bookings and travel preferences. You choose whether FiveStar reads recent mail only or your travel mail
