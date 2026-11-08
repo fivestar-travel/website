@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 # Privacy Policy
 
-_Last updated November 7, 2026._
+_Last updated November 8, 2026._
 
 FiveStar is a personal AI travel concierge at [askfivestar.ai](https://askfivestar.ai). In this policy
 "FiveStar", "we" and "us" mean the people who run it. This policy covers the FiveStar app and this website,
@@ -32,7 +32,8 @@ If you have a question, write to [support@askfivestar.ai](mailto:support@askfive
 - Sharing a trip with someone is your choice. Everyone on a shared trip keeps their own copy, but nobody sees anyone
   else's booking or confirmation numbers.
 - FiveStar emails you only at an address that is verified, and only when someone asks to be your friend or shares a
-  trip with you. It sends no newsletters or offers.
+  trip with you. It sends no newsletters or offers. If you email a trip itinerary to someone, FiveStar sends it for
+  you, with your address as the one they reply to.
 - We do not sell your data, show ads, or use third-party analytics or advertising trackers.
 
 ## What we collect, and why
@@ -354,7 +355,8 @@ choice, it works whether or not you are signed in, and nothing is published unti
 ## Email from FiveStar
 
 FiveStar sends you two kinds of email, and nothing else: one when someone asks to be your friend, and one when a
-friend shares a trip with you. The email says who it is from, and for a trip, the city and the dates. Each email has
+friend shares a trip with you. It also sends a trip itinerary when you ask it to, to the people you choose (see
+[Emailing an itinerary](#emailing-an-itinerary)). The email says who it is from, and for a trip, the city and the dates. Each email has
 one button and contains no tracking pixels or remote images. We send no newsletters, offers or advertising.
 
 - **Only to a verified address.** FiveStar emails you only at an address that is verified in one of two ways. Either
@@ -363,7 +365,7 @@ one button and contains no tracking pixels or remote images. We send no newslett
   FiveStar emailed to that address. An address waiting for confirmation gets nothing but that one link, and it is kept
   for at most 24 hours.
 - **Who sees your address.** Only you, in **Settings**. It is never shown to another traveler, never included in a
-  notice sent to anyone else, never written to our logs, and it cannot be used to look you up.
+  notice sent to anyone else (the one exception: an itinerary you email yourself, below), never written to our logs, and it cannot be used to look you up.
 - **Limits.** FiveStar limits how many notices anyone can cause or receive in a day. To do that, it keeps short-lived
   records made of keyed one-way codes and times, never addresses or names.
 - **Replies** go to the FiveStar team, not to the person named in the email.
@@ -372,6 +374,22 @@ one button and contains no tracking pixels or remote images. We send no newslett
   deletes your address and your choices.
 - **Who delivers it.** We send these emails through Amazon Web Services (Amazon SES), with Resend as a fallback. Each
   receives only your address and the email itself, to deliver it.
+
+### Emailing an itinerary
+
+You can print a trip's itinerary, save it as a PDF, or email it to up to five people at a time. When you email one,
+FiveStar sends it from FiveStar's address to the people you type in, with your name in the email and your verified
+email address as the reply-to address, so they can answer you. That is the only time FiveStar shows your address to
+anyone. You need a verified address to send one.
+
+- **We don't keep their addresses.** To stop anyone being flooded with email, we keep a keyed one-way code of each
+  address for a day, to count how many itineraries it has received. Nothing else about them is stored.
+- **Confirmation numbers are left out** of the email and its PDF unless you switch them on. Addresses on the trip are
+  included, because that is what the people you send it to need.
+- **No tracking.** The email has no tracking pixels or remote images.
+- **Who delivers it.** Amazon Web Services (Amazon SES), with Resend as a fallback, receive the recipients' addresses
+  and the email with its PDF, to deliver it.
+- **Printing and saving** happen on your device: FiveStar makes the PDF and sends it only to you.
 
 ## What is public
 
