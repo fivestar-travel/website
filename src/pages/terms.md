@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 # Terms of Service
 
-_Last updated November 1, 2026._
+_Last updated November 11, 2026._
 
 These terms are an agreement between you and FiveStar ("FiveStar", "we", "us"), which runs FiveStar at
 [askfivestar.ai](https://askfivestar.ai) and this website. By using FiveStar you agree to them. If you do not
@@ -43,6 +43,17 @@ maps depend on them. How we handle your personal information is described in the
 Add only menu photos you took yourself, or that you have the right to share, of the menu of the place you add them
 to. Not photos of people, receipts, or anything else, and nothing explicit, hateful or misleading. FiveStar checks
 photos before they are shown, may hide or remove any photo, and travelers can report one.
+
+### Roads you add
+
+When you draw a road that the map is missing, you give FiveStar a worldwide, royalty-free, perpetual and
+irrevocable license to use, change, combine, publish and share it, including for directions and in FiveStar's
+developer API. FiveStar checks every road before directions use it and may change, hide or stop using any road at
+any time. FiveStar keeps the roads its travelers add in its own layer; they are not contributed to OpenStreetMap.
+Because FiveStar combines them with OpenStreetMap data, which is licensed under the Open Database License (ODbL) 1.0,
+FiveStar makes the roads travelers add available on request under the ODbL: write to
+[support@askfivestar.ai](mailto:support@askfivestar.ai). Only add roads that are really there and that you have seen
+yourself; don't add private roads you have no permission to share.
 
 ## Reviews and check-ins must be genuine
 
